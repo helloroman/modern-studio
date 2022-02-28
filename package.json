@@ -16,19 +16,35 @@
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.6",
     "gatsby": "^4.8.0",
+    "gatsby-plugin-eslint": "^4.0.2",
     "gatsby-plugin-google-analytics": "^4.8.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.8.1",
     "gatsby-plugin-manifest": "^4.8.1",
     "gatsby-plugin-react-helmet": "^5.8.0",
+    "gatsby-plugin-root-import": "^2.0.8",
     "gatsby-plugin-sharp": "^4.8.1",
     "gatsby-plugin-sitemap": "^5.8.0",
     "gatsby-plugin-styled-components": "^5.8.0",
     "gatsby-source-contentful": "^7.6.1",
     "gatsby-source-filesystem": "^4.8.1",
     "gatsby-transformer-sharp": "^4.8.0",
+    "prop-types": "^15.8.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-react": "^7.16.7",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.2",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-webpack-plugin": "^3.1.1"
   }
 }
