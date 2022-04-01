@@ -6,7 +6,7 @@ import {
   Hero,
   HeroHeading,
   HeroParagraph,
-  HighlightedHeading, ReviewsSection,
+  ReviewsSection,
   ServicesSection,
   ShowcaseGallery,
   ShowcaseImage,
@@ -17,6 +17,7 @@ import {
   WelcomeSectionContent,
   WelcomeSectionImage,
 } from '../assets/styles/pages/Homepage.styles';
+import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
 
 const Homepage = ({ data }) => (
   <>
