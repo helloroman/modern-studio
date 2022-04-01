@@ -12,7 +12,8 @@
     }
   },
   "env": {
-    "node": true
+    "node": true,
+    "browser": true
   },
   "extends": [
     "airbnb",
@@ -24,7 +25,15 @@
     "import/prefer-default-export": "off",
     "import/no-default-export": "warn",
     "import/no-unresolved": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": "off",
+    "react/button-has-type": "off",
+    "react/self-closing-comp": "off",
+    "react/prop-types": "warn",
+    "react/destructuring-assignment": "warn",
+    "no-debugger": "off",
+    "jsx-a11y/label-has-associated-control": "warn",
+    "react/require-default-props": "off"
   },
   "overrides": [
     {

@@ -18,6 +18,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
+        failOnError: false,
         rulePaths: [gatsbyRequiredRules],
         stages: ['develop'],
         extensions: ['js', 'jsx'],
@@ -68,10 +69,18 @@ module.exports = {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          'montserrat\:300,500,700',
-          'cormorant garamond\:500',
+          'montserrat\:300,400,500,700',
+          'cormorant garamond\:300,500',
         ],
         display: 'swap',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets\/icons/,
+        },
       },
     },
   ],
