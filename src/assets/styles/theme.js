@@ -36,9 +36,13 @@ export const theme = {
      * @param {('topLeft' | 'bottomLeft' | 'topRight' | 'bottomRight')} position
      * @param size
      * @param color
+     * @param {('before' | 'after')} pseudoelement
+     * @param distance
      */
-    corner: ({ position = 'topLeft', size = '70px', color = theme.color.dark }) => css`
-      &::after {
+    corner: ({
+      position = 'topLeft', distance = '20px', size = '70px', color = theme.color.dark, pseudoelement = 'after',
+    }) => css`
+      &::${pseudoelement} {
         position: absolute;
         width: ${size};
         height: ${size};
@@ -48,26 +52,26 @@ export const theme = {
       case 'topLeft':
         return css`
           clip-path: polygon(100% 16%, 16% 16%, 16% 100%, 0 100%, 0 0, 100% 0);
-          top: -20px;
-          left: -20px;
+          top: -${distance};
+          left: -${distance};
         `;
       case 'bottomLeft':
         return css`
           clip-path: polygon(0 0, 16% 0, 16% 84%, 100% 84%, 100% 100%, 0 100%);
-          bottom: -20px;
-          left: -20px;
+          bottom: -${distance};
+          left: -${distance};
         `;
       case 'topRight':
         return css`
           clip-path: polygon(0 16%, 0 0, 100% 0, 100% 100%, 84% 100%, 84% 16%);
-          top: -20px;
-          right: -20px;
+          top: -${distance};
+          right: -${distance};
         `;
       case 'bottomRight':
         return css`
           clip-path: polygon(84% 0, 84% 84%, 0 84%, 0 100%, 100% 100%, 100% 0%);
-          bottom: -20px;
-          right: -20px;
+          bottom: -${distance};
+          right: -${distance};
         `;
       default:
         return '';
