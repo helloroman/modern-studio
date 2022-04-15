@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import arrowIcon from 'assets/styles/arrow.svg';
+import arrowIcon from 'assets/icons/arrow.svg';
 
 export const StyledList = styled.ul`
   padding: 0;
@@ -88,16 +88,6 @@ export const HeroHeading = styled.h1`
 export const HeroParagraph = styled.p`
   font-size: ${({ theme }) => theme.font.size.paragraph};
   text-shadow: ${({ theme }) => theme.font.shadow};
-`;
-
-export const ContentWrapper = styled.div`
-  padding: 0 20px;
-  
-  ${({ theme }) => theme.mq.desktop} {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 100px;
-  }
 `;
 
 const StyledSection = styled.section`
@@ -395,6 +385,10 @@ export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
+  
+  button {
+    margin: 10px 0;
+  }
   
   label {
     font-family: ${({ theme }) => theme.font.family.montserrat};

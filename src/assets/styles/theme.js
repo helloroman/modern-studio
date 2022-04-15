@@ -19,6 +19,8 @@ export const theme = {
       caption: '1.35rem',
       mobileMenu: '2.1rem',
       button: '1.2rem',
+      thumbnail: '1.8rem',
+      thumbnailSmall: '1.4rem',
     },
     family: {
       montserrat: '"Montserrat", sans-serif',
