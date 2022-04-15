@@ -16,6 +16,16 @@ export const StyledHeading = styled.div`
     left: -50%;
     background-color: ${({ theme }) => theme.color.beige};
   }
+  
+  ${({ theme }) => theme.mq.desktop} {
+    &::before {
+      width: 50%;
+      height: calc(${({ theme }) => theme.font.size.headingSmall} * 1.5);
+      top: calc(-${({ theme }) => theme.font.size.headingSmall} / 6);
+      left: -5%;
+      background-color: ${({ theme }) => theme.color.beige};
+    }
+  }
 `;
 
 export const HighlightedHeading = ({ level = '2', children }) => <StyledHeading as={`h${level}`}>{children}</StyledHeading>;
