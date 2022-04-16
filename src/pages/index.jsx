@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
+import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
+import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles';
 import {
   AdvantagesSection, ContactForm,
-  ContentWrapper,
   Hero,
   HeroHeading,
   HeroParagraph,
@@ -16,8 +17,7 @@ import {
   WelcomeSection,
   WelcomeSectionContent,
   WelcomeSectionImage,
-} from '../assets/styles/pages/Homepage.styles';
-import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
+} from 'assets/styles/pages/Homepage.styles';
 
 const Homepage = ({ data }) => (
   <>

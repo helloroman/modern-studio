@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/assets/icons/favicon.png',
+        icon: 'src/assets/icons-components/favicon.png',
       },
     },
     'gatsby-plugin-sharp',
@@ -79,7 +79,7 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /assets\/icons/,
+          include: /assets\/icons-components/,
         },
       },
     },
