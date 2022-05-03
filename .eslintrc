@@ -43,7 +43,7 @@
         "import/no-default-export": "off"
       }
     }, {
-      "files": ["gatsby-browser.js", "gatsby-ssr.js"],
+      "files": ["gatsby-browser.js", "gatsby-ssr.js", "*.styles.*"],
       "rules": {
         "react/jsx-filename-extension": "off"
       }
