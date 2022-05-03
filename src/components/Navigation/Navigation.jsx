@@ -34,7 +34,7 @@ export const Navigation = () => {
         <StyledNavigation>
           <ul>
             <li><Link onClick={toggleNavigation} to="/oferty">Oferty</Link></li>
-            <li><Link onClick={toggleNavigation} to="/">Realizacje</Link></li>
+            <li><Link onClick={toggleNavigation} to="/realizacje">Realizacje</Link></li>
             <li><Link onClick={toggleNavigation} to="/">Zespół</Link></li>
             <li><Link onClick={toggleNavigation} to="/">Usługi</Link></li>
             <li><Link onClick={toggleNavigation} to="/">Kontakt</Link></li>
