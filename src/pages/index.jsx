@@ -17,7 +17,7 @@ import {
   WelcomeSection,
   WelcomeSectionContent,
   WelcomeSectionImage,
-} from 'assets/styles/pages/Homepage.styles';
+} from 'assets/styles/pages/homepage.styles';
 
 const Homepage = ({ data }) => (
   <>
