@@ -5,7 +5,7 @@ export const ContentWrapper = styled.div`
   padding: 0 20px;
   
   ${({ theme }) => theme.mq.desktop} {
-    max-width: 1600px;
+    max-width: 1920px;
     margin: ${({ isSubpage }) => (isSubpage ? '180px' : '0')} auto 0 auto;
     padding: 0 100px;
   }

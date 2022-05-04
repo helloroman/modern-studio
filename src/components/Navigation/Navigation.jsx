@@ -35,9 +35,9 @@ export const Navigation = () => {
           <ul>
             <li><Link onClick={toggleNavigation} to="/oferty">Oferty</Link></li>
             <li><Link onClick={toggleNavigation} to="/realizacje">Realizacje</Link></li>
-            <li><Link onClick={toggleNavigation} to="/">Zespół</Link></li>
-            <li><Link onClick={toggleNavigation} to="/">Usługi</Link></li>
-            <li><Link onClick={toggleNavigation} to="/">Kontakt</Link></li>
+            <li><Link onClick={toggleNavigation} to="/zespol">Zespół</Link></li>
+            <li><Link onClick={toggleNavigation} to="/uslugi">Usługi</Link></li>
+            <li><Link onClick={toggleNavigation} to="/kontakt">Kontakt</Link></li>
           </ul>
         </StyledNavigation>
         <div>
