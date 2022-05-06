@@ -13,11 +13,12 @@ import {
   ShowcaseImage,
   ShowcaseSection,
   StyledButton, StyledLinkButton,
-  StyledList, StyledReview, TeamImage, TeamSection,
+  StyledReview, TeamImage, TeamSection,
   WelcomeSection,
   WelcomeSectionContent,
   WelcomeSectionImage,
 } from 'assets/styles/pages/homepage.styles';
+import { StyledList } from 'components/StyledList/StyledList.styles';
 
 const Homepage = ({ data }) => (
   <>

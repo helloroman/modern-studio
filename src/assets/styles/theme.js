@@ -10,6 +10,9 @@ export const theme = {
     black: 'hsl(0,0%,0%)',
     brown: 'hsl(355,13%,20%)',
   },
+  size: {
+    desktopHeroHeight: '800px',
+  },
   font: {
     shadow: '5px 5px 10px hsla(0, 0%, 0%, 0.15)',
     size: {
