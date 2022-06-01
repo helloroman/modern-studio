@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const IntroSection = styled.section`
   img {
@@ -18,8 +18,6 @@ export const IntroSection = styled.section`
     img {
       width: 50%;
     }
-
-    ${({ theme }) => theme.effect.corner({ position: 'bottomRight', size: '100px', distance: '40px' })};
   }
 `;
 
@@ -35,53 +33,32 @@ export const PortfolioItem = styled.article`
     display: flex;
     align-items: center;
     position: relative;
+    flex-direction: ${({ isOdd }) => (isOdd ? 'row-reverse' : 'row')};
 
     div {
       width: 50%;
+      padding: ${({ isOdd }) => (isOdd ? '0 0 0 80px' : '0 80px 0 0')};
     }
 
     img {
       width: 50%;
     }
-
-    &:nth-child(odd) {
-      ${({ theme }) => theme.effect.corner({ position: 'topRight', size: '100px', distance: '40px' })};
-
-      div {
-        padding-right: 80px;
-      }
+    
+    p {
+      max-width: 80%;
     }
-
-    &:nth-child(even) {
-      flex-direction: row-reverse;
-      ${({ theme }) => theme.effect.corner({
-    position: 'topLeft', size: '100px', distance: '40px', color: theme.color.beige,
-  })};
-
-      div {
-        padding-left: 80px;
-      }
-    }
-
-    &:last-child {
+    
+    ${({ isFullWidth }) => (isFullWidth ? css`
       width: 100%;
       flex-direction: column;
-      ${({ theme }) => theme.effect.corner({
-    position: 'bottomRight',
-    size: '100px',
-    distance: '40px',
-    color: theme.color.beige,
-    pseudoelement: 'before',
-  })};
-
-      // After was overwritten by the styles above
-      // so ::before element was used instead
-      &::after {
-        display: none;
-      }
-
+      
       img {
         width: 100%;
+      }
+      
+      p {
+        text-align: center;
+        margin: 0 auto;
       }
 
       div {
@@ -89,6 +66,6 @@ export const PortfolioItem = styled.article`
         margin: 30px auto;
         padding: 0;
       }
-    }
+    ` : null)};
   }
 `;
