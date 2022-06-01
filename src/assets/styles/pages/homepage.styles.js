@@ -124,7 +124,7 @@ export const WelcomeSectionContent = styled.div`
   
   ${({ theme }) => theme.mq.desktop} {
     position: absolute;
-    width: 55%;
+    width: 50%;
     top: 100px;
     height: auto;
     padding: 50px;
@@ -136,7 +136,7 @@ export const WelcomeSectionContent = styled.div`
   }
   
   ${({ theme }) => theme.mq.bigDesktop} {
-    top: 130px;
+    top: 150px;
   }
 `;
 
@@ -165,7 +165,7 @@ export const WelcomeSectionImage = styled.div`
     z-index: -1;
     top: -80px;
     height: 500px;
-    width: 80%;
+    width: 70%;
   }
 `;
 
@@ -258,6 +258,12 @@ export const ServicesSection = styled(StyledSection)`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0 50px;
+    
+    div:first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
     
     & > p {
       align-self: center;
