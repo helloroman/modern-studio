@@ -8,7 +8,7 @@ import {
   HeroHeading,
   HeroParagraph,
   ReviewsSection,
-  ServicesSection,
+  ServicesSection, ShowcaseCorner,
   ShowcaseGallery,
   ShowcaseImage,
   ShowcaseSection,
@@ -28,7 +28,7 @@ const Homepage = ({ data }) => (
     </Hero>
     <ContentWrapper>
       <WelcomeSection>
-        <WelcomeSectionContent>
+        <WelcomeSectionContent position="topRight" size="100px" distance="30px" offset="600">
           <h2>
             Obsługę nieruchomości
             wymyśliliśmy na nowo
@@ -42,7 +42,7 @@ const Homepage = ({ data }) => (
             co jest w stanie zaoferować konkurencja.
           </p>
         </WelcomeSectionContent>
-        <WelcomeSectionImage imageSource={data.welcome.publicURL} />
+        <WelcomeSectionImage position="bottomLeft" color="beige" size="100px" distance="30px" imageSource={data.welcome.publicURL} />
       </WelcomeSection>
       <AdvantagesSection>
         <HighlightedHeading width="50" isRight>Dlaczego szukasz właśnie nas?</HighlightedHeading>
@@ -87,6 +87,8 @@ const Homepage = ({ data }) => (
           <ShowcaseImage isBig src={data.grid2.publicURL} alt="#" />
           <ShowcaseImage src={data.grid3.publicURL} alt="#" />
           <ShowcaseImage isBig src={data.grid4.publicURL} alt="#" />
+          <ShowcaseCorner position="bottomLeft" size="100px" distance="30px" color="beige" />
+          <ShowcaseCorner position="topRight" size="100px" distance="30px" color="dark" />
         </ShowcaseGallery>
       </ShowcaseSection>
       <ServicesSection>
@@ -138,8 +140,8 @@ const Homepage = ({ data }) => (
           </p>
           <StyledLinkButton>Sprawdź, kim jesteśmy</StyledLinkButton>
         </div>
-        <TeamImage imageSource={data.team1.publicURL} alt="" />
-        <TeamImage imageSource={data.team2.publicURL} alt="" />
+        <TeamImage offset="700" position="bottomLeft" size="70px" distance="20px" color="beige" imageSource={data.team1.publicURL} alt="" />
+        <TeamImage position="topRight" size="100px" distance="30px" color="dark" imageSource={data.team2.publicURL} alt="" />
       </TeamSection>
       <ReviewsSection>
         <div>
