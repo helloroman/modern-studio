@@ -29,6 +29,7 @@
     "gatsby-plugin-styled-components": "^5.8.0",
     "gatsby-source-contentful": "^7.6.1",
     "gatsby-source-filesystem": "^4.8.1",
+    "gatsby-transformer-remark": "^5.19.0",
     "gatsby-transformer-sharp": "^4.8.0",
     "gsap": "^3.10.4",
     "lodash.throttle": "^4.1.1",
@@ -36,6 +37,9 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-responsive-carousel": "^3.2.23",
+    "slick-carousel": "^1.8.1",
+    "slugify": "^1.6.5",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
