@@ -68,11 +68,6 @@ export const ContactDetails = styled.div`
 
 export const Gallery = styled.div`
   width: 100%;
-  
-  img {
-    width: 100%;
-    max-height: 400px;
-  }
 `;
 
 export const OfferDescription = styled.p`
