@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
 import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles';
 import {
-  AdvantagesSection, ContactForm,
+  AdvantagesSection,
   Hero,
   HeroHeading,
   HeroParagraph,
@@ -19,6 +19,7 @@ import {
   WelcomeSectionImage,
 } from 'assets/styles/pages/homepage.styles';
 import { StyledList } from 'components/StyledList/StyledList.styles';
+import { ContactForm } from '../components/ContactForm/ContactForm';
 
 const Homepage = ({ data }) => (
   <>
@@ -171,14 +172,7 @@ const Homepage = ({ data }) => (
           </StyledReview>
         </div>
       </ReviewsSection>
-      <ContactForm action="#">
-        <HighlightedHeading isRight width="60">Napisz do nas</HighlightedHeading>
-        <label htmlFor="email">Adres e-mail</label>
-        <input type="email" name="email" id="email" placeholder="Adres e-mail" />
-        <label htmlFor="message">Treść</label>
-        <textarea name="message" id="message" placeholder="Wiadomość" />
-        <StyledButton>Wyślij</StyledButton>
-      </ContactForm>
+      <ContactForm />
     </ContentWrapper>
   </>
 );

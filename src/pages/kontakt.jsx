@@ -5,9 +5,9 @@ import {
   ContactInfoWrapper,
   ContactPhoto,
 } from 'assets/styles/pages/kontakt.styles';
-import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
-import PhoneIcon from '../assets/icons-components/phone.svg';
-import { ContactForm, StyledButton } from '../assets/styles/pages/homepage.styles';
+import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
+import PhoneIcon from 'assets/icons-components/phone.svg';
+import { ContactForm } from 'components/ContactForm/ContactForm';
 
 const Kontakt = ({ data }) => (
   <ContactContentWrapper isSubpage>
@@ -22,14 +22,15 @@ const Kontakt = ({ data }) => (
         730 026 439
       </a>
     </ContactInfoWrapper>
-    <ContactForm action="#">
-      <label htmlFor="email">Adres e-mail</label>
-      <input type="email" name="email" id="email" placeholder="Adres e-mail" />
-      <label htmlFor="message">Treść</label>
-      <textarea name="message" id="message" placeholder="Wiadomość" />
-      <StyledButton>Wyślij</StyledButton>
-    </ContactForm>
-    <ContactPhoto color="steel" offset="2000" position="bottomLeft" size="100px" distance="30px" imageSource={data.hero.publicURL} />
+    <ContactForm />
+    <ContactPhoto
+      color="steel"
+      offset="2000"
+      position="bottomLeft"
+      size="100px"
+      distance="30px"
+      imageSource={data.hero.publicURL}
+    />
   </ContactContentWrapper>
 );
 

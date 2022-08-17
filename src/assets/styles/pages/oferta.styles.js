@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles';
+import { ContactDetails } from 'components/ContactDetails/ContactDetails';
 
 export const Address = styled.p`
   font-weight: 700;
@@ -44,25 +45,6 @@ export const OfferDetailsList = styled.ul`
     div {
       display: flex;
     }
-  }
-`;
-
-export const ContactDetails = styled.div`
-  display: flex;
-  margin-bottom: 50px;
-  
-  img {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-  }
-  
-  p {
-    margin: 0;
-  }
-  
-  p:first-child {
-    font-weight: bold;
   }
 `;
 

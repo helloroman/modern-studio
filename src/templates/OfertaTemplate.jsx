@@ -6,7 +6,7 @@ import OfferTypeIcon from 'assets/icons-components/offer-type.svg';
 import RoomsIcon from 'assets/icons-components/rooms.svg';
 import BuildingTypeIcon from 'assets/icons-components/building-type.svg';
 import {
-  Address, ContactDetails,
+  Address,
   Gallery, OfferDescription, OfferDetailsList,
   OfferTitle,
   StyledContentWrapper,
@@ -14,6 +14,7 @@ import {
 import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import { ContactDetails } from 'components/ContactDetails/ContactDetails';
 
 const galleryOptions = {
   showStatus: false,
@@ -75,15 +76,7 @@ const OfertaTemplate = ({ data: { oferta, avatar } }) => (
         </div>
       </li>
     </OfferDetailsList>
-    <ContactDetails>
-      <img src={avatar.publicURL} alt="" />
-      <div>
-        <p>Kontakt:</p>
-        <p>Anna Żarczyńska</p>
-        <p>ania@msnieruchomosci.pl</p>
-        <p>730 026 439</p>
-      </div>
-    </ContactDetails>
+    <ContactDetails contact={oferta.kontakt} />
   </StyledContentWrapper>
 );
 
