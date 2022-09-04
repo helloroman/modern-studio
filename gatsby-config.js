@@ -32,7 +32,6 @@ module.exports = {
         spaceId: 'gvkavrag7nip',
       },
     },
-    'gatsby-transformer-remark',
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -64,7 +63,6 @@ module.exports = {
       options: {
         assets: path.join(__dirname, 'src', 'assets'),
         components: path.join(__dirname, 'src', 'components'),
-        helpers: path.join(__dirname, 'src', 'helpers'),
       },
     },
     {

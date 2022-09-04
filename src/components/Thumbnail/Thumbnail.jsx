@@ -1,17 +1,16 @@
 import React from 'react';
-import { getPageSlug } from 'helpers/getPageSlug';
 import {
   ThumbnailImage,
   ThumbnailInfo,
   ThumbnailWrapper,
 } from './Thumbnail.styles';
 
-export const Thumbnail = ({ imageSource = '', title = '', address = '' }) => (
-  <ThumbnailWrapper to={getPageSlug(address)}>
+export const Thumbnail = ({ imageSource }) => (
+  <ThumbnailWrapper>
     <ThumbnailImage src={imageSource} alt="" />
     <ThumbnailInfo>
-      <p>{address}</p>
-      <p>{title}</p>
+      <p>Rolna 20</p>
+      <p>Nowoczesny apartament z klasą</p>
     </ThumbnailInfo>
   </ThumbnailWrapper>
 );

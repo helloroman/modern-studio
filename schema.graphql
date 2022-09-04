@@ -33,7 +33,7 @@ directive @childOf(
     "A list of mime-types this type is a child of. Usually these are the mime-types handled by a transformer plugin."
     mimeTypes: [String!]! = [],
     "A list of types this type is a child of. Usually these are the types handled by a transformer plugin."
-    types: [String!]! = ["contentfulOfertaOpisTextNode"]
+    types: [String!]! = []
 ) on OBJECT
 
 """
@@ -69,18 +69,6 @@ interface Node {
 type ContentfulAsset implements ContentfulReference & Node {
     children: [Node!]!
     contentful_id: String!
-    createdAt(
-        "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
-        difference: String,
-        "Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens."
-        formatString: String,
-        "Returns a string generated with Moment.js' `fromNow` function"
-        fromNow: Boolean,
-        "Configures the locale Moment.js will use to format the date."
-        locale: String
-    ): Date
-    description: String
-    file: ContentfulAssetFile
     gatsbyImageData(
         """
 
@@ -157,21 +145,7 @@ type ContentfulAsset implements ContentfulReference & Node {
     ): JSON
     id: ID!
     internal: Internal!
-    node_locale: String
     parent: Node
-    spaceId: String
-    sys: ContentfulAssetSys
-    title: String
-    updatedAt(
-        "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
-        difference: String,
-        "Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens."
-        formatString: String,
-        "Returns a string generated with Moment.js' `fromNow` function"
-        fromNow: Boolean,
-        "Configures the locale Moment.js will use to format the date."
-        locale: String
-    ): Date
 }
 
 type ContentfulAssetConnection {
@@ -192,23 +166,6 @@ type ContentfulAssetEdge {
     previous: ContentfulAsset
 }
 
-type ContentfulAssetFile {
-    contentType: String
-    details: ContentfulAssetFileDetails
-    fileName: String
-    url: String
-}
-
-type ContentfulAssetFileDetails {
-    image: ContentfulAssetFileDetailsImage
-    size: Int
-}
-
-type ContentfulAssetFileDetailsImage {
-    height: Int
-    width: Int
-}
-
 type ContentfulAssetGroupConnection {
     distinct(field: ContentfulAssetFieldsEnum!): [String!]!
     edges: [ContentfulAssetEdge!]!
@@ -221,58 +178,6 @@ type ContentfulAssetGroupConnection {
     pageInfo: PageInfo!
     sum(field: ContentfulAssetFieldsEnum!): Float
     totalCount: Int!
-}
-
-type ContentfulAssetSys {
-    revision: Int
-    type: String
-}
-
-type ContentfulContentType implements Node {
-    children: [Node!]!
-    description: String
-    displayField: String
-    id: ID!
-    internal: Internal!
-    name: String
-    parent: Node
-    sys: ContentfulContentTypeSys
-}
-
-type ContentfulContentTypeConnection {
-    distinct(field: ContentfulContentTypeFieldsEnum!): [String!]!
-    edges: [ContentfulContentTypeEdge!]!
-    group(field: ContentfulContentTypeFieldsEnum!, limit: Int, skip: Int): [ContentfulContentTypeGroupConnection!]!
-    max(field: ContentfulContentTypeFieldsEnum!): Float
-    min(field: ContentfulContentTypeFieldsEnum!): Float
-    nodes: [ContentfulContentType!]!
-    pageInfo: PageInfo!
-    sum(field: ContentfulContentTypeFieldsEnum!): Float
-    totalCount: Int!
-}
-
-type ContentfulContentTypeEdge {
-    next: ContentfulContentType
-    node: ContentfulContentType!
-    previous: ContentfulContentType
-}
-
-type ContentfulContentTypeGroupConnection {
-    distinct(field: ContentfulContentTypeFieldsEnum!): [String!]!
-    edges: [ContentfulContentTypeEdge!]!
-    field: String!
-    fieldValue: String
-    group(field: ContentfulContentTypeFieldsEnum!, limit: Int, skip: Int): [ContentfulContentTypeGroupConnection!]!
-    max(field: ContentfulContentTypeFieldsEnum!): Float
-    min(field: ContentfulContentTypeFieldsEnum!): Float
-    nodes: [ContentfulContentType!]!
-    pageInfo: PageInfo!
-    sum(field: ContentfulContentTypeFieldsEnum!): Float
-    totalCount: Int!
-}
-
-type ContentfulContentTypeSys {
-    type: String
 }
 
 type ContentfulEntryConnection {
@@ -305,99 +210,6 @@ type ContentfulEntryGroupConnection {
     pageInfo: PageInfo!
     sum(field: ContentfulEntryFieldsEnum!): Float
     totalCount: Int!
-}
-
-type ContentfulOferta implements ContentfulEntry & ContentfulReference & Node {
-    adres: String
-    "Returns the first child node of type contentfulOfertaOpisTextNode or null if there are no children of given type on this node"
-    childContentfulOfertaOpisTextNode: contentfulOfertaOpisTextNode
-    children: [Node!]!
-    "Returns all children nodes filtered by type contentfulOfertaOpisTextNode"
-    childrenContentfulOfertaOpisTextNode: [contentfulOfertaOpisTextNode]
-    contentful_id: String!
-    createdAt(
-        "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
-        difference: String,
-        "Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens."
-        formatString: String,
-        "Returns a string generated with Moment.js' `fromNow` function"
-        fromNow: Boolean,
-        "Configures the locale Moment.js will use to format the date."
-        locale: String
-    ): Date
-    dostepnosc: String
-    galeria: [ContentfulAsset]
-    id: ID!
-    internal: Internal!
-    kontakt: String
-    node_locale: String!
-    opis: contentfulOfertaOpisTextNode
-    parent: Node
-    pomieszczenia: String
-    powierzchnia: String
-    rodzajOferty: String
-    spaceId: String
-    sys: ContentfulOfertaSys
-    typBudynku: String
-    tytul: String
-    updatedAt(
-        "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
-        difference: String,
-        "Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens."
-        formatString: String,
-        "Returns a string generated with Moment.js' `fromNow` function"
-        fromNow: Boolean,
-        "Configures the locale Moment.js will use to format the date."
-        locale: String
-    ): Date
-}
-
-type ContentfulOfertaConnection {
-    distinct(field: ContentfulOfertaFieldsEnum!): [String!]!
-    edges: [ContentfulOfertaEdge!]!
-    group(field: ContentfulOfertaFieldsEnum!, limit: Int, skip: Int): [ContentfulOfertaGroupConnection!]!
-    max(field: ContentfulOfertaFieldsEnum!): Float
-    min(field: ContentfulOfertaFieldsEnum!): Float
-    nodes: [ContentfulOferta!]!
-    pageInfo: PageInfo!
-    sum(field: ContentfulOfertaFieldsEnum!): Float
-    totalCount: Int!
-}
-
-type ContentfulOfertaEdge {
-    next: ContentfulOferta
-    node: ContentfulOferta!
-    previous: ContentfulOferta
-}
-
-type ContentfulOfertaGroupConnection {
-    distinct(field: ContentfulOfertaFieldsEnum!): [String!]!
-    edges: [ContentfulOfertaEdge!]!
-    field: String!
-    fieldValue: String
-    group(field: ContentfulOfertaFieldsEnum!, limit: Int, skip: Int): [ContentfulOfertaGroupConnection!]!
-    max(field: ContentfulOfertaFieldsEnum!): Float
-    min(field: ContentfulOfertaFieldsEnum!): Float
-    nodes: [ContentfulOferta!]!
-    pageInfo: PageInfo!
-    sum(field: ContentfulOfertaFieldsEnum!): Float
-    totalCount: Int!
-}
-
-type ContentfulOfertaSys {
-    contentType: ContentfulOfertaSysContentType
-    revision: Int
-    type: String
-}
-
-type ContentfulOfertaSysContentType {
-    sys: ContentfulOfertaSysContentTypeSys
-}
-
-type ContentfulOfertaSysContentTypeSys {
-    id: String
-    linkType: String
-    type: String
 }
 
 type Directory implements Node {
@@ -880,71 +692,6 @@ type Internal {
     type: String!
 }
 
-type MarkdownHeading {
-    depth: Int
-    id: String
-    value: String
-}
-
-type MarkdownRemark implements Node {
-    children: [Node!]!
-    excerpt(format: MarkdownExcerptFormats = PLAIN, pruneLength: Int = 140, truncate: Boolean = false): String
-    excerptAst(pruneLength: Int = 140, truncate: Boolean = false): JSON
-    frontmatter: MarkdownRemarkFrontmatter
-    headings(depth: MarkdownHeadingLevels): [MarkdownHeading]
-    html: String
-    htmlAst: JSON
-    id: ID!
-    internal: Internal!
-    parent: Node
-    rawMarkdownBody: String
-    tableOfContents(absolute: Boolean = false, heading: String, maxDepth: Int, pathToSlugField: String = ""): String
-    timeToRead: Int
-    wordCount: MarkdownWordCount
-}
-
-type MarkdownRemarkConnection {
-    distinct(field: MarkdownRemarkFieldsEnum!): [String!]!
-    edges: [MarkdownRemarkEdge!]!
-    group(field: MarkdownRemarkFieldsEnum!, limit: Int, skip: Int): [MarkdownRemarkGroupConnection!]!
-    max(field: MarkdownRemarkFieldsEnum!): Float
-    min(field: MarkdownRemarkFieldsEnum!): Float
-    nodes: [MarkdownRemark!]!
-    pageInfo: PageInfo!
-    sum(field: MarkdownRemarkFieldsEnum!): Float
-    totalCount: Int!
-}
-
-type MarkdownRemarkEdge {
-    next: MarkdownRemark
-    node: MarkdownRemark!
-    previous: MarkdownRemark
-}
-
-type MarkdownRemarkFrontmatter {
-    title: String
-}
-
-type MarkdownRemarkGroupConnection {
-    distinct(field: MarkdownRemarkFieldsEnum!): [String!]!
-    edges: [MarkdownRemarkEdge!]!
-    field: String!
-    fieldValue: String
-    group(field: MarkdownRemarkFieldsEnum!, limit: Int, skip: Int): [MarkdownRemarkGroupConnection!]!
-    max(field: MarkdownRemarkFieldsEnum!): Float
-    min(field: MarkdownRemarkFieldsEnum!): Float
-    nodes: [MarkdownRemark!]!
-    pageInfo: PageInfo!
-    sum(field: MarkdownRemarkFieldsEnum!): Float
-    totalCount: Int!
-}
-
-type MarkdownWordCount {
-    paragraphs: Int
-    sentences: Int
-    words: Int
-}
-
 type PageInfo {
     currentPage: Int!
     hasNextPage: Boolean!
@@ -957,28 +704,20 @@ type PageInfo {
 
 type Query {
     allContentfulAsset(filter: ContentfulAssetFilterInput, limit: Int, skip: Int, sort: ContentfulAssetSortInput): ContentfulAssetConnection!
-    allContentfulContentType(filter: ContentfulContentTypeFilterInput, limit: Int, skip: Int, sort: ContentfulContentTypeSortInput): ContentfulContentTypeConnection!
     allContentfulEntry(filter: ContentfulEntryFilterInput, limit: Int, skip: Int, sort: ContentfulEntrySortInput): ContentfulEntryConnection!
-    allContentfulOferta(filter: ContentfulOfertaFilterInput, limit: Int, skip: Int, sort: ContentfulOfertaSortInput): ContentfulOfertaConnection!
-    allContentfulOfertaOpisTextNode(filter: contentfulOfertaOpisTextNodeFilterInput, limit: Int, skip: Int, sort: contentfulOfertaOpisTextNodeSortInput): contentfulOfertaOpisTextNodeConnection!
     allDirectory(filter: DirectoryFilterInput, limit: Int, skip: Int, sort: DirectorySortInput): DirectoryConnection!
     allFile(filter: FileFilterInput, limit: Int, skip: Int, sort: FileSortInput): FileConnection!
     allImageSharp(filter: ImageSharpFilterInput, limit: Int, skip: Int, sort: ImageSharpSortInput): ImageSharpConnection!
-    allMarkdownRemark(filter: MarkdownRemarkFilterInput, limit: Int, skip: Int, sort: MarkdownRemarkSortInput): MarkdownRemarkConnection!
     allSite(filter: SiteFilterInput, limit: Int, skip: Int, sort: SiteSortInput): SiteConnection!
     allSiteBuildMetadata(filter: SiteBuildMetadataFilterInput, limit: Int, skip: Int, sort: SiteBuildMetadataSortInput): SiteBuildMetadataConnection!
     allSiteFunction(filter: SiteFunctionFilterInput, limit: Int, skip: Int, sort: SiteFunctionSortInput): SiteFunctionConnection!
     allSitePage(filter: SitePageFilterInput, limit: Int, skip: Int, sort: SitePageSortInput): SitePageConnection!
     allSitePlugin(filter: SitePluginFilterInput, limit: Int, skip: Int, sort: SitePluginSortInput): SitePluginConnection!
-    contentfulAsset(children: NodeFilterListInput, contentful_id: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, description: StringQueryOperatorInput, file: ContentfulAssetFileFilterInput, gatsbyImageData: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, node_locale: StringQueryOperatorInput, parent: NodeFilterInput, spaceId: StringQueryOperatorInput, sys: ContentfulAssetSysFilterInput, title: StringQueryOperatorInput, updatedAt: DateQueryOperatorInput): ContentfulAsset
-    contentfulContentType(children: NodeFilterListInput, description: StringQueryOperatorInput, displayField: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, parent: NodeFilterInput, sys: ContentfulContentTypeSysFilterInput): ContentfulContentType
+    contentfulAsset(children: NodeFilterListInput, contentful_id: StringQueryOperatorInput, gatsbyImageData: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): ContentfulAsset
     contentfulEntry(children: NodeFilterListInput, contentful_id: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, node_locale: StringQueryOperatorInput, parent: NodeFilterInput): ContentfulEntry
-    contentfulOferta(adres: StringQueryOperatorInput, childContentfulOfertaOpisTextNode: contentfulOfertaOpisTextNodeFilterInput, children: NodeFilterListInput, childrenContentfulOfertaOpisTextNode: contentfulOfertaOpisTextNodeFilterListInput, contentful_id: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, dostepnosc: StringQueryOperatorInput, galeria: ContentfulAssetFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, kontakt: StringQueryOperatorInput, node_locale: StringQueryOperatorInput, opis: contentfulOfertaOpisTextNodeFilterInput, parent: NodeFilterInput, pomieszczenia: StringQueryOperatorInput, powierzchnia: StringQueryOperatorInput, rodzajOferty: StringQueryOperatorInput, spaceId: StringQueryOperatorInput, sys: ContentfulOfertaSysFilterInput, typBudynku: StringQueryOperatorInput, tytul: StringQueryOperatorInput, updatedAt: DateQueryOperatorInput): ContentfulOferta
-    contentfulOfertaOpisTextNode(childMarkdownRemark: MarkdownRemarkFilterInput, children: NodeFilterListInput, childrenMarkdownRemark: MarkdownRemarkFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, opis: StringQueryOperatorInput, parent: NodeFilterInput, sys: contentfulOfertaOpisTextNodeSysFilterInput): contentfulOfertaOpisTextNode
     directory(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): Directory
     file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, childImageSharp: ImageSharpFilterInput, children: NodeFilterListInput, childrenImageSharp: ImageSharpFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
     imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, gatsbyImageData: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput): ImageSharp
-    markdownRemark(children: NodeFilterListInput, excerpt: StringQueryOperatorInput, excerptAst: JSONQueryOperatorInput, frontmatter: MarkdownRemarkFrontmatterFilterInput, headings: MarkdownHeadingFilterListInput, html: StringQueryOperatorInput, htmlAst: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, rawMarkdownBody: StringQueryOperatorInput, tableOfContents: StringQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: MarkdownWordCountFilterInput): MarkdownRemark
     site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, jsxRuntime: StringQueryOperatorInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput, trailingSlash: StringQueryOperatorInput): Site
     siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
     siteFunction(absoluteCompiledFilePath: StringQueryOperatorInput, children: NodeFilterListInput, functionRoute: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, matchPath: StringQueryOperatorInput, originalAbsoluteFilePath: StringQueryOperatorInput, originalRelativeFilePath: StringQueryOperatorInput, parent: NodeFilterInput, pluginName: StringQueryOperatorInput, relativeCompiledFilePath: StringQueryOperatorInput): SiteFunction
@@ -1237,55 +976,6 @@ type SiteSiteMetadata {
     title: String
 }
 
-type contentfulOfertaOpisTextNode implements Node {
-    "Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node"
-    childMarkdownRemark: MarkdownRemark
-    children: [Node!]!
-    "Returns all children nodes filtered by type MarkdownRemark"
-    childrenMarkdownRemark: [MarkdownRemark]
-    id: ID!
-    internal: Internal!
-    opis: String
-    parent: Node
-    sys: contentfulOfertaOpisTextNodeSys
-}
-
-type contentfulOfertaOpisTextNodeConnection {
-    distinct(field: contentfulOfertaOpisTextNodeFieldsEnum!): [String!]!
-    edges: [contentfulOfertaOpisTextNodeEdge!]!
-    group(field: contentfulOfertaOpisTextNodeFieldsEnum!, limit: Int, skip: Int): [contentfulOfertaOpisTextNodeGroupConnection!]!
-    max(field: contentfulOfertaOpisTextNodeFieldsEnum!): Float
-    min(field: contentfulOfertaOpisTextNodeFieldsEnum!): Float
-    nodes: [contentfulOfertaOpisTextNode!]!
-    pageInfo: PageInfo!
-    sum(field: contentfulOfertaOpisTextNodeFieldsEnum!): Float
-    totalCount: Int!
-}
-
-type contentfulOfertaOpisTextNodeEdge {
-    next: contentfulOfertaOpisTextNode
-    node: contentfulOfertaOpisTextNode!
-    previous: contentfulOfertaOpisTextNode
-}
-
-type contentfulOfertaOpisTextNodeGroupConnection {
-    distinct(field: contentfulOfertaOpisTextNodeFieldsEnum!): [String!]!
-    edges: [contentfulOfertaOpisTextNodeEdge!]!
-    field: String!
-    fieldValue: String
-    group(field: contentfulOfertaOpisTextNodeFieldsEnum!, limit: Int, skip: Int): [contentfulOfertaOpisTextNodeGroupConnection!]!
-    max(field: contentfulOfertaOpisTextNodeFieldsEnum!): Float
-    min(field: contentfulOfertaOpisTextNodeFieldsEnum!): Float
-    nodes: [contentfulOfertaOpisTextNode!]!
-    pageInfo: PageInfo!
-    sum(field: contentfulOfertaOpisTextNodeFieldsEnum!): Float
-    totalCount: Int!
-}
-
-type contentfulOfertaOpisTextNodeSys {
-    type: String
-}
-
 enum ContentfulAssetFieldsEnum {
     children
     children___children
@@ -1327,14 +1017,6 @@ enum ContentfulAssetFieldsEnum {
     children___parent___parent___children
     children___parent___parent___id
     contentful_id
-    createdAt
-    description
-    file___contentType
-    file___details___image___height
-    file___details___image___width
-    file___details___size
-    file___fileName
-    file___url
     gatsbyImageData @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
     id
     internal___content
@@ -1345,7 +1027,6 @@ enum ContentfulAssetFieldsEnum {
     internal___mediaType
     internal___owner
     internal___type
-    node_locale
     parent___children
     parent___children___children
     parent___children___children___children
@@ -1384,104 +1065,6 @@ enum ContentfulAssetFieldsEnum {
     parent___parent___internal___type
     parent___parent___parent___children
     parent___parent___parent___id
-    spaceId
-    sys___revision
-    sys___type
-    title
-    updatedAt
-}
-
-enum ContentfulContentTypeFieldsEnum {
-    children
-    children___children
-    children___children___children
-    children___children___children___children
-    children___children___children___id
-    children___children___id
-    children___children___internal___content
-    children___children___internal___contentDigest
-    children___children___internal___description
-    children___children___internal___fieldOwners
-    children___children___internal___ignoreType
-    children___children___internal___mediaType
-    children___children___internal___owner
-    children___children___internal___type
-    children___children___parent___children
-    children___children___parent___id
-    children___id
-    children___internal___content
-    children___internal___contentDigest
-    children___internal___description
-    children___internal___fieldOwners
-    children___internal___ignoreType
-    children___internal___mediaType
-    children___internal___owner
-    children___internal___type
-    children___parent___children
-    children___parent___children___children
-    children___parent___children___id
-    children___parent___id
-    children___parent___internal___content
-    children___parent___internal___contentDigest
-    children___parent___internal___description
-    children___parent___internal___fieldOwners
-    children___parent___internal___ignoreType
-    children___parent___internal___mediaType
-    children___parent___internal___owner
-    children___parent___internal___type
-    children___parent___parent___children
-    children___parent___parent___id
-    description
-    displayField
-    id
-    internal___content
-    internal___contentDigest
-    internal___description
-    internal___fieldOwners
-    internal___ignoreType
-    internal___mediaType
-    internal___owner
-    internal___type
-    name
-    parent___children
-    parent___children___children
-    parent___children___children___children
-    parent___children___children___id
-    parent___children___id
-    parent___children___internal___content
-    parent___children___internal___contentDigest
-    parent___children___internal___description
-    parent___children___internal___fieldOwners
-    parent___children___internal___ignoreType
-    parent___children___internal___mediaType
-    parent___children___internal___owner
-    parent___children___internal___type
-    parent___children___parent___children
-    parent___children___parent___id
-    parent___id
-    parent___internal___content
-    parent___internal___contentDigest
-    parent___internal___description
-    parent___internal___fieldOwners
-    parent___internal___ignoreType
-    parent___internal___mediaType
-    parent___internal___owner
-    parent___internal___type
-    parent___parent___children
-    parent___parent___children___children
-    parent___parent___children___id
-    parent___parent___id
-    parent___parent___internal___content
-    parent___parent___internal___contentDigest
-    parent___parent___internal___description
-    parent___parent___internal___fieldOwners
-    parent___parent___internal___ignoreType
-    parent___parent___internal___mediaType
-    parent___parent___internal___owner
-    parent___parent___internal___type
-    parent___parent___parent___children
-    parent___parent___parent___id
-    sys___type
 }
 
 enum ContentfulEntryFieldsEnum {
@@ -1587,464 +1170,6 @@ enum ContentfulImageCropFocus {
     TOP
     TOP_LEFT
     TOP_RIGHT
-}
-
-enum ContentfulOfertaFieldsEnum {
-    adres
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___children
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___children___children
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___children___id
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___frontmatter___title
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___html
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___htmlAst
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___id
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___internal___content
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___internal___contentDigest
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___internal___description
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___internal___fieldOwners
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___internal___ignoreType
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___internal___mediaType
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___internal___owner
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___internal___type
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___parent___children
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___parent___id
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___rawMarkdownBody
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___timeToRead
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___wordCount___paragraphs
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___wordCount___sentences
-    childContentfulOfertaOpisTextNode___childMarkdownRemark___wordCount___words
-    childContentfulOfertaOpisTextNode___children
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___children
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___children___children
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___children___id
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___frontmatter___title
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___html
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___htmlAst
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___id
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___content
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___contentDigest
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___description
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___fieldOwners
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___ignoreType
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___mediaType
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___owner
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___type
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___parent___children
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___parent___id
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___rawMarkdownBody
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___timeToRead
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___wordCount___paragraphs
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___wordCount___sentences
-    childContentfulOfertaOpisTextNode___childrenMarkdownRemark___wordCount___words
-    childContentfulOfertaOpisTextNode___children___children
-    childContentfulOfertaOpisTextNode___children___children___children
-    childContentfulOfertaOpisTextNode___children___children___id
-    childContentfulOfertaOpisTextNode___children___id
-    childContentfulOfertaOpisTextNode___children___internal___content
-    childContentfulOfertaOpisTextNode___children___internal___contentDigest
-    childContentfulOfertaOpisTextNode___children___internal___description
-    childContentfulOfertaOpisTextNode___children___internal___fieldOwners
-    childContentfulOfertaOpisTextNode___children___internal___ignoreType
-    childContentfulOfertaOpisTextNode___children___internal___mediaType
-    childContentfulOfertaOpisTextNode___children___internal___owner
-    childContentfulOfertaOpisTextNode___children___internal___type
-    childContentfulOfertaOpisTextNode___children___parent___children
-    childContentfulOfertaOpisTextNode___children___parent___id
-    childContentfulOfertaOpisTextNode___id
-    childContentfulOfertaOpisTextNode___internal___content
-    childContentfulOfertaOpisTextNode___internal___contentDigest
-    childContentfulOfertaOpisTextNode___internal___description
-    childContentfulOfertaOpisTextNode___internal___fieldOwners
-    childContentfulOfertaOpisTextNode___internal___ignoreType
-    childContentfulOfertaOpisTextNode___internal___mediaType
-    childContentfulOfertaOpisTextNode___internal___owner
-    childContentfulOfertaOpisTextNode___internal___type
-    childContentfulOfertaOpisTextNode___opis
-    childContentfulOfertaOpisTextNode___parent___children
-    childContentfulOfertaOpisTextNode___parent___children___children
-    childContentfulOfertaOpisTextNode___parent___children___id
-    childContentfulOfertaOpisTextNode___parent___id
-    childContentfulOfertaOpisTextNode___parent___internal___content
-    childContentfulOfertaOpisTextNode___parent___internal___contentDigest
-    childContentfulOfertaOpisTextNode___parent___internal___description
-    childContentfulOfertaOpisTextNode___parent___internal___fieldOwners
-    childContentfulOfertaOpisTextNode___parent___internal___ignoreType
-    childContentfulOfertaOpisTextNode___parent___internal___mediaType
-    childContentfulOfertaOpisTextNode___parent___internal___owner
-    childContentfulOfertaOpisTextNode___parent___internal___type
-    childContentfulOfertaOpisTextNode___parent___parent___children
-    childContentfulOfertaOpisTextNode___parent___parent___id
-    childContentfulOfertaOpisTextNode___sys___type
-    children
-    childrenContentfulOfertaOpisTextNode
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___children
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___children___children
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___children___id
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___frontmatter___title
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___html
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___htmlAst
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___id
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___internal___content
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___internal___contentDigest
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___internal___description
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___internal___fieldOwners
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___internal___ignoreType
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___internal___mediaType
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___internal___owner
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___internal___type
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___parent___children
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___parent___id
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___rawMarkdownBody
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___timeToRead
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___wordCount___paragraphs
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___wordCount___sentences
-    childrenContentfulOfertaOpisTextNode___childMarkdownRemark___wordCount___words
-    childrenContentfulOfertaOpisTextNode___children
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___children
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___children___children
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___children___id
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___frontmatter___title
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___html
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___htmlAst
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___id
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___content
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___contentDigest
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___description
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___fieldOwners
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___ignoreType
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___mediaType
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___owner
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___internal___type
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___parent___children
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___parent___id
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___rawMarkdownBody
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___timeToRead
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___wordCount___paragraphs
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___wordCount___sentences
-    childrenContentfulOfertaOpisTextNode___childrenMarkdownRemark___wordCount___words
-    childrenContentfulOfertaOpisTextNode___children___children
-    childrenContentfulOfertaOpisTextNode___children___children___children
-    childrenContentfulOfertaOpisTextNode___children___children___id
-    childrenContentfulOfertaOpisTextNode___children___id
-    childrenContentfulOfertaOpisTextNode___children___internal___content
-    childrenContentfulOfertaOpisTextNode___children___internal___contentDigest
-    childrenContentfulOfertaOpisTextNode___children___internal___description
-    childrenContentfulOfertaOpisTextNode___children___internal___fieldOwners
-    childrenContentfulOfertaOpisTextNode___children___internal___ignoreType
-    childrenContentfulOfertaOpisTextNode___children___internal___mediaType
-    childrenContentfulOfertaOpisTextNode___children___internal___owner
-    childrenContentfulOfertaOpisTextNode___children___internal___type
-    childrenContentfulOfertaOpisTextNode___children___parent___children
-    childrenContentfulOfertaOpisTextNode___children___parent___id
-    childrenContentfulOfertaOpisTextNode___id
-    childrenContentfulOfertaOpisTextNode___internal___content
-    childrenContentfulOfertaOpisTextNode___internal___contentDigest
-    childrenContentfulOfertaOpisTextNode___internal___description
-    childrenContentfulOfertaOpisTextNode___internal___fieldOwners
-    childrenContentfulOfertaOpisTextNode___internal___ignoreType
-    childrenContentfulOfertaOpisTextNode___internal___mediaType
-    childrenContentfulOfertaOpisTextNode___internal___owner
-    childrenContentfulOfertaOpisTextNode___internal___type
-    childrenContentfulOfertaOpisTextNode___opis
-    childrenContentfulOfertaOpisTextNode___parent___children
-    childrenContentfulOfertaOpisTextNode___parent___children___children
-    childrenContentfulOfertaOpisTextNode___parent___children___id
-    childrenContentfulOfertaOpisTextNode___parent___id
-    childrenContentfulOfertaOpisTextNode___parent___internal___content
-    childrenContentfulOfertaOpisTextNode___parent___internal___contentDigest
-    childrenContentfulOfertaOpisTextNode___parent___internal___description
-    childrenContentfulOfertaOpisTextNode___parent___internal___fieldOwners
-    childrenContentfulOfertaOpisTextNode___parent___internal___ignoreType
-    childrenContentfulOfertaOpisTextNode___parent___internal___mediaType
-    childrenContentfulOfertaOpisTextNode___parent___internal___owner
-    childrenContentfulOfertaOpisTextNode___parent___internal___type
-    childrenContentfulOfertaOpisTextNode___parent___parent___children
-    childrenContentfulOfertaOpisTextNode___parent___parent___id
-    childrenContentfulOfertaOpisTextNode___sys___type
-    children___children
-    children___children___children
-    children___children___children___children
-    children___children___children___id
-    children___children___id
-    children___children___internal___content
-    children___children___internal___contentDigest
-    children___children___internal___description
-    children___children___internal___fieldOwners
-    children___children___internal___ignoreType
-    children___children___internal___mediaType
-    children___children___internal___owner
-    children___children___internal___type
-    children___children___parent___children
-    children___children___parent___id
-    children___id
-    children___internal___content
-    children___internal___contentDigest
-    children___internal___description
-    children___internal___fieldOwners
-    children___internal___ignoreType
-    children___internal___mediaType
-    children___internal___owner
-    children___internal___type
-    children___parent___children
-    children___parent___children___children
-    children___parent___children___id
-    children___parent___id
-    children___parent___internal___content
-    children___parent___internal___contentDigest
-    children___parent___internal___description
-    children___parent___internal___fieldOwners
-    children___parent___internal___ignoreType
-    children___parent___internal___mediaType
-    children___parent___internal___owner
-    children___parent___internal___type
-    children___parent___parent___children
-    children___parent___parent___id
-    contentful_id
-    createdAt
-    dostepnosc
-    galeria
-    galeria___children
-    galeria___children___children
-    galeria___children___children___children
-    galeria___children___children___id
-    galeria___children___id
-    galeria___children___internal___content
-    galeria___children___internal___contentDigest
-    galeria___children___internal___description
-    galeria___children___internal___fieldOwners
-    galeria___children___internal___ignoreType
-    galeria___children___internal___mediaType
-    galeria___children___internal___owner
-    galeria___children___internal___type
-    galeria___children___parent___children
-    galeria___children___parent___id
-    galeria___contentful_id
-    galeria___createdAt
-    galeria___description
-    galeria___file___contentType
-    galeria___file___details___size
-    galeria___file___fileName
-    galeria___file___url
-    galeria___gatsbyImageData @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    galeria___id
-    galeria___internal___content
-    galeria___internal___contentDigest
-    galeria___internal___description
-    galeria___internal___fieldOwners
-    galeria___internal___ignoreType
-    galeria___internal___mediaType
-    galeria___internal___owner
-    galeria___internal___type
-    galeria___node_locale
-    galeria___parent___children
-    galeria___parent___children___children
-    galeria___parent___children___id
-    galeria___parent___id
-    galeria___parent___internal___content
-    galeria___parent___internal___contentDigest
-    galeria___parent___internal___description
-    galeria___parent___internal___fieldOwners
-    galeria___parent___internal___ignoreType
-    galeria___parent___internal___mediaType
-    galeria___parent___internal___owner
-    galeria___parent___internal___type
-    galeria___parent___parent___children
-    galeria___parent___parent___id
-    galeria___spaceId
-    galeria___sys___revision
-    galeria___sys___type
-    galeria___title
-    galeria___updatedAt
-    id
-    internal___content
-    internal___contentDigest
-    internal___description
-    internal___fieldOwners
-    internal___ignoreType
-    internal___mediaType
-    internal___owner
-    internal___type
-    kontakt
-    node_locale
-    opis___childMarkdownRemark___children
-    opis___childMarkdownRemark___children___children
-    opis___childMarkdownRemark___children___id
-    opis___childMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childMarkdownRemark___excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childMarkdownRemark___frontmatter___title
-    opis___childMarkdownRemark___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childMarkdownRemark___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childMarkdownRemark___headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childMarkdownRemark___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childMarkdownRemark___html
-    opis___childMarkdownRemark___htmlAst
-    opis___childMarkdownRemark___id
-    opis___childMarkdownRemark___internal___content
-    opis___childMarkdownRemark___internal___contentDigest
-    opis___childMarkdownRemark___internal___description
-    opis___childMarkdownRemark___internal___fieldOwners
-    opis___childMarkdownRemark___internal___ignoreType
-    opis___childMarkdownRemark___internal___mediaType
-    opis___childMarkdownRemark___internal___owner
-    opis___childMarkdownRemark___internal___type
-    opis___childMarkdownRemark___parent___children
-    opis___childMarkdownRemark___parent___id
-    opis___childMarkdownRemark___rawMarkdownBody
-    opis___childMarkdownRemark___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childMarkdownRemark___timeToRead
-    opis___childMarkdownRemark___wordCount___paragraphs
-    opis___childMarkdownRemark___wordCount___sentences
-    opis___childMarkdownRemark___wordCount___words
-    opis___children
-    opis___childrenMarkdownRemark
-    opis___childrenMarkdownRemark___children
-    opis___childrenMarkdownRemark___children___children
-    opis___childrenMarkdownRemark___children___id
-    opis___childrenMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childrenMarkdownRemark___excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childrenMarkdownRemark___frontmatter___title
-    opis___childrenMarkdownRemark___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childrenMarkdownRemark___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childrenMarkdownRemark___headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childrenMarkdownRemark___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childrenMarkdownRemark___html
-    opis___childrenMarkdownRemark___htmlAst
-    opis___childrenMarkdownRemark___id
-    opis___childrenMarkdownRemark___internal___content
-    opis___childrenMarkdownRemark___internal___contentDigest
-    opis___childrenMarkdownRemark___internal___description
-    opis___childrenMarkdownRemark___internal___fieldOwners
-    opis___childrenMarkdownRemark___internal___ignoreType
-    opis___childrenMarkdownRemark___internal___mediaType
-    opis___childrenMarkdownRemark___internal___owner
-    opis___childrenMarkdownRemark___internal___type
-    opis___childrenMarkdownRemark___parent___children
-    opis___childrenMarkdownRemark___parent___id
-    opis___childrenMarkdownRemark___rawMarkdownBody
-    opis___childrenMarkdownRemark___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    opis___childrenMarkdownRemark___timeToRead
-    opis___childrenMarkdownRemark___wordCount___paragraphs
-    opis___childrenMarkdownRemark___wordCount___sentences
-    opis___childrenMarkdownRemark___wordCount___words
-    opis___children___children
-    opis___children___children___children
-    opis___children___children___id
-    opis___children___id
-    opis___children___internal___content
-    opis___children___internal___contentDigest
-    opis___children___internal___description
-    opis___children___internal___fieldOwners
-    opis___children___internal___ignoreType
-    opis___children___internal___mediaType
-    opis___children___internal___owner
-    opis___children___internal___type
-    opis___children___parent___children
-    opis___children___parent___id
-    opis___id
-    opis___internal___content
-    opis___internal___contentDigest
-    opis___internal___description
-    opis___internal___fieldOwners
-    opis___internal___ignoreType
-    opis___internal___mediaType
-    opis___internal___owner
-    opis___internal___type
-    opis___opis
-    opis___parent___children
-    opis___parent___children___children
-    opis___parent___children___id
-    opis___parent___id
-    opis___parent___internal___content
-    opis___parent___internal___contentDigest
-    opis___parent___internal___description
-    opis___parent___internal___fieldOwners
-    opis___parent___internal___ignoreType
-    opis___parent___internal___mediaType
-    opis___parent___internal___owner
-    opis___parent___internal___type
-    opis___parent___parent___children
-    opis___parent___parent___id
-    opis___sys___type
-    parent___children
-    parent___children___children
-    parent___children___children___children
-    parent___children___children___id
-    parent___children___id
-    parent___children___internal___content
-    parent___children___internal___contentDigest
-    parent___children___internal___description
-    parent___children___internal___fieldOwners
-    parent___children___internal___ignoreType
-    parent___children___internal___mediaType
-    parent___children___internal___owner
-    parent___children___internal___type
-    parent___children___parent___children
-    parent___children___parent___id
-    parent___id
-    parent___internal___content
-    parent___internal___contentDigest
-    parent___internal___description
-    parent___internal___fieldOwners
-    parent___internal___ignoreType
-    parent___internal___mediaType
-    parent___internal___owner
-    parent___internal___type
-    parent___parent___children
-    parent___parent___children___children
-    parent___parent___children___id
-    parent___parent___id
-    parent___parent___internal___content
-    parent___parent___internal___contentDigest
-    parent___parent___internal___description
-    parent___parent___internal___fieldOwners
-    parent___parent___internal___ignoreType
-    parent___parent___internal___mediaType
-    parent___parent___internal___owner
-    parent___parent___internal___type
-    parent___parent___parent___children
-    parent___parent___parent___id
-    pomieszczenia
-    powierzchnia
-    rodzajOferty
-    spaceId
-    sys___contentType___sys___id
-    sys___contentType___sys___linkType
-    sys___contentType___sys___type
-    sys___revision
-    sys___type
-    typBudynku
-    tytul
-    updatedAt
 }
 
 enum DirectoryFieldsEnum {
@@ -2632,125 +1757,6 @@ enum ImageSharpFieldsEnum {
     resize___width @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
 }
 
-enum MarkdownExcerptFormats {
-    HTML
-    MARKDOWN
-    PLAIN
-}
-
-enum MarkdownHeadingLevels {
-    h1
-    h2
-    h3
-    h4
-    h5
-    h6
-}
-
-enum MarkdownRemarkFieldsEnum {
-    children
-    children___children
-    children___children___children
-    children___children___children___children
-    children___children___children___id
-    children___children___id
-    children___children___internal___content
-    children___children___internal___contentDigest
-    children___children___internal___description
-    children___children___internal___fieldOwners
-    children___children___internal___ignoreType
-    children___children___internal___mediaType
-    children___children___internal___owner
-    children___children___internal___type
-    children___children___parent___children
-    children___children___parent___id
-    children___id
-    children___internal___content
-    children___internal___contentDigest
-    children___internal___description
-    children___internal___fieldOwners
-    children___internal___ignoreType
-    children___internal___mediaType
-    children___internal___owner
-    children___internal___type
-    children___parent___children
-    children___parent___children___children
-    children___parent___children___id
-    children___parent___id
-    children___parent___internal___content
-    children___parent___internal___contentDigest
-    children___parent___internal___description
-    children___parent___internal___fieldOwners
-    children___parent___internal___ignoreType
-    children___parent___internal___mediaType
-    children___parent___internal___owner
-    children___parent___internal___type
-    children___parent___parent___children
-    children___parent___parent___id
-    excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    frontmatter___title
-    headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    html
-    htmlAst
-    id
-    internal___content
-    internal___contentDigest
-    internal___description
-    internal___fieldOwners
-    internal___ignoreType
-    internal___mediaType
-    internal___owner
-    internal___type
-    parent___children
-    parent___children___children
-    parent___children___children___children
-    parent___children___children___id
-    parent___children___id
-    parent___children___internal___content
-    parent___children___internal___contentDigest
-    parent___children___internal___description
-    parent___children___internal___fieldOwners
-    parent___children___internal___ignoreType
-    parent___children___internal___mediaType
-    parent___children___internal___owner
-    parent___children___internal___type
-    parent___children___parent___children
-    parent___children___parent___id
-    parent___id
-    parent___internal___content
-    parent___internal___contentDigest
-    parent___internal___description
-    parent___internal___fieldOwners
-    parent___internal___ignoreType
-    parent___internal___mediaType
-    parent___internal___owner
-    parent___internal___type
-    parent___parent___children
-    parent___parent___children___children
-    parent___parent___children___id
-    parent___parent___id
-    parent___parent___internal___content
-    parent___parent___internal___contentDigest
-    parent___parent___internal___description
-    parent___parent___internal___fieldOwners
-    parent___parent___internal___ignoreType
-    parent___parent___internal___mediaType
-    parent___parent___internal___owner
-    parent___parent___internal___type
-    parent___parent___parent___children
-    parent___parent___parent___id
-    rawMarkdownBody
-    tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    timeToRead
-    wordCount___paragraphs
-    wordCount___sentences
-    wordCount___words
-}
-
 enum PotraceTurnPolicy {
     TURNPOLICY_BLACK
     TURNPOLICY_LEFT
@@ -3290,204 +2296,6 @@ enum SortOrderEnum {
     DESC
 }
 
-enum contentfulOfertaOpisTextNodeFieldsEnum {
-    childMarkdownRemark___children
-    childMarkdownRemark___children___children
-    childMarkdownRemark___children___children___children
-    childMarkdownRemark___children___children___id
-    childMarkdownRemark___children___id
-    childMarkdownRemark___children___internal___content
-    childMarkdownRemark___children___internal___contentDigest
-    childMarkdownRemark___children___internal___description
-    childMarkdownRemark___children___internal___fieldOwners
-    childMarkdownRemark___children___internal___ignoreType
-    childMarkdownRemark___children___internal___mediaType
-    childMarkdownRemark___children___internal___owner
-    childMarkdownRemark___children___internal___type
-    childMarkdownRemark___children___parent___children
-    childMarkdownRemark___children___parent___id
-    childMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___frontmatter___title
-    childMarkdownRemark___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___html
-    childMarkdownRemark___htmlAst
-    childMarkdownRemark___id
-    childMarkdownRemark___internal___content
-    childMarkdownRemark___internal___contentDigest
-    childMarkdownRemark___internal___description
-    childMarkdownRemark___internal___fieldOwners
-    childMarkdownRemark___internal___ignoreType
-    childMarkdownRemark___internal___mediaType
-    childMarkdownRemark___internal___owner
-    childMarkdownRemark___internal___type
-    childMarkdownRemark___parent___children
-    childMarkdownRemark___parent___children___children
-    childMarkdownRemark___parent___children___id
-    childMarkdownRemark___parent___id
-    childMarkdownRemark___parent___internal___content
-    childMarkdownRemark___parent___internal___contentDigest
-    childMarkdownRemark___parent___internal___description
-    childMarkdownRemark___parent___internal___fieldOwners
-    childMarkdownRemark___parent___internal___ignoreType
-    childMarkdownRemark___parent___internal___mediaType
-    childMarkdownRemark___parent___internal___owner
-    childMarkdownRemark___parent___internal___type
-    childMarkdownRemark___parent___parent___children
-    childMarkdownRemark___parent___parent___id
-    childMarkdownRemark___rawMarkdownBody
-    childMarkdownRemark___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___timeToRead
-    childMarkdownRemark___wordCount___paragraphs
-    childMarkdownRemark___wordCount___sentences
-    childMarkdownRemark___wordCount___words
-    children
-    childrenMarkdownRemark
-    childrenMarkdownRemark___children
-    childrenMarkdownRemark___children___children
-    childrenMarkdownRemark___children___children___children
-    childrenMarkdownRemark___children___children___id
-    childrenMarkdownRemark___children___id
-    childrenMarkdownRemark___children___internal___content
-    childrenMarkdownRemark___children___internal___contentDigest
-    childrenMarkdownRemark___children___internal___description
-    childrenMarkdownRemark___children___internal___fieldOwners
-    childrenMarkdownRemark___children___internal___ignoreType
-    childrenMarkdownRemark___children___internal___mediaType
-    childrenMarkdownRemark___children___internal___owner
-    childrenMarkdownRemark___children___internal___type
-    childrenMarkdownRemark___children___parent___children
-    childrenMarkdownRemark___children___parent___id
-    childrenMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___frontmatter___title
-    childrenMarkdownRemark___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___html
-    childrenMarkdownRemark___htmlAst
-    childrenMarkdownRemark___id
-    childrenMarkdownRemark___internal___content
-    childrenMarkdownRemark___internal___contentDigest
-    childrenMarkdownRemark___internal___description
-    childrenMarkdownRemark___internal___fieldOwners
-    childrenMarkdownRemark___internal___ignoreType
-    childrenMarkdownRemark___internal___mediaType
-    childrenMarkdownRemark___internal___owner
-    childrenMarkdownRemark___internal___type
-    childrenMarkdownRemark___parent___children
-    childrenMarkdownRemark___parent___children___children
-    childrenMarkdownRemark___parent___children___id
-    childrenMarkdownRemark___parent___id
-    childrenMarkdownRemark___parent___internal___content
-    childrenMarkdownRemark___parent___internal___contentDigest
-    childrenMarkdownRemark___parent___internal___description
-    childrenMarkdownRemark___parent___internal___fieldOwners
-    childrenMarkdownRemark___parent___internal___ignoreType
-    childrenMarkdownRemark___parent___internal___mediaType
-    childrenMarkdownRemark___parent___internal___owner
-    childrenMarkdownRemark___parent___internal___type
-    childrenMarkdownRemark___parent___parent___children
-    childrenMarkdownRemark___parent___parent___id
-    childrenMarkdownRemark___rawMarkdownBody
-    childrenMarkdownRemark___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___timeToRead
-    childrenMarkdownRemark___wordCount___paragraphs
-    childrenMarkdownRemark___wordCount___sentences
-    childrenMarkdownRemark___wordCount___words
-    children___children
-    children___children___children
-    children___children___children___children
-    children___children___children___id
-    children___children___id
-    children___children___internal___content
-    children___children___internal___contentDigest
-    children___children___internal___description
-    children___children___internal___fieldOwners
-    children___children___internal___ignoreType
-    children___children___internal___mediaType
-    children___children___internal___owner
-    children___children___internal___type
-    children___children___parent___children
-    children___children___parent___id
-    children___id
-    children___internal___content
-    children___internal___contentDigest
-    children___internal___description
-    children___internal___fieldOwners
-    children___internal___ignoreType
-    children___internal___mediaType
-    children___internal___owner
-    children___internal___type
-    children___parent___children
-    children___parent___children___children
-    children___parent___children___id
-    children___parent___id
-    children___parent___internal___content
-    children___parent___internal___contentDigest
-    children___parent___internal___description
-    children___parent___internal___fieldOwners
-    children___parent___internal___ignoreType
-    children___parent___internal___mediaType
-    children___parent___internal___owner
-    children___parent___internal___type
-    children___parent___parent___children
-    children___parent___parent___id
-    id
-    internal___content
-    internal___contentDigest
-    internal___description
-    internal___fieldOwners
-    internal___ignoreType
-    internal___mediaType
-    internal___owner
-    internal___type
-    opis
-    parent___children
-    parent___children___children
-    parent___children___children___children
-    parent___children___children___id
-    parent___children___id
-    parent___children___internal___content
-    parent___children___internal___contentDigest
-    parent___children___internal___description
-    parent___children___internal___fieldOwners
-    parent___children___internal___ignoreType
-    parent___children___internal___mediaType
-    parent___children___internal___owner
-    parent___children___internal___type
-    parent___children___parent___children
-    parent___children___parent___id
-    parent___id
-    parent___internal___content
-    parent___internal___contentDigest
-    parent___internal___description
-    parent___internal___fieldOwners
-    parent___internal___ignoreType
-    parent___internal___mediaType
-    parent___internal___owner
-    parent___internal___type
-    parent___parent___children
-    parent___parent___children___children
-    parent___parent___children___id
-    parent___parent___id
-    parent___parent___internal___content
-    parent___parent___internal___contentDigest
-    parent___parent___internal___description
-    parent___parent___internal___fieldOwners
-    parent___parent___internal___ignoreType
-    parent___parent___internal___mediaType
-    parent___parent___internal___owner
-    parent___parent___internal___type
-    parent___parent___parent___children
-    parent___parent___parent___id
-    sys___type
-}
-
 "A date string, such as 2007-12-03, compliant with the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
 scalar Date
 
@@ -3514,72 +2322,18 @@ input BooleanQueryOperatorInput {
     nin: [Boolean]
 }
 
-input ContentfulAssetFileDetailsFilterInput {
-    image: ContentfulAssetFileDetailsImageFilterInput
-    size: IntQueryOperatorInput
-}
-
-input ContentfulAssetFileDetailsImageFilterInput {
-    height: IntQueryOperatorInput
-    width: IntQueryOperatorInput
-}
-
-input ContentfulAssetFileFilterInput {
-    contentType: StringQueryOperatorInput
-    details: ContentfulAssetFileDetailsFilterInput
-    fileName: StringQueryOperatorInput
-    url: StringQueryOperatorInput
-}
-
 input ContentfulAssetFilterInput {
     children: NodeFilterListInput
     contentful_id: StringQueryOperatorInput
-    createdAt: DateQueryOperatorInput
-    description: StringQueryOperatorInput
-    file: ContentfulAssetFileFilterInput
     gatsbyImageData: JSONQueryOperatorInput
     id: StringQueryOperatorInput
     internal: InternalFilterInput
-    node_locale: StringQueryOperatorInput
     parent: NodeFilterInput
-    spaceId: StringQueryOperatorInput
-    sys: ContentfulAssetSysFilterInput
-    title: StringQueryOperatorInput
-    updatedAt: DateQueryOperatorInput
-}
-
-input ContentfulAssetFilterListInput {
-    elemMatch: ContentfulAssetFilterInput
 }
 
 input ContentfulAssetSortInput {
     fields: [ContentfulAssetFieldsEnum]
     order: [SortOrderEnum] = [ASC]
-}
-
-input ContentfulAssetSysFilterInput {
-    revision: IntQueryOperatorInput
-    type: StringQueryOperatorInput
-}
-
-input ContentfulContentTypeFilterInput {
-    children: NodeFilterListInput
-    description: StringQueryOperatorInput
-    displayField: StringQueryOperatorInput
-    id: StringQueryOperatorInput
-    internal: InternalFilterInput
-    name: StringQueryOperatorInput
-    parent: NodeFilterInput
-    sys: ContentfulContentTypeSysFilterInput
-}
-
-input ContentfulContentTypeSortInput {
-    fields: [ContentfulContentTypeFieldsEnum]
-    order: [SortOrderEnum] = [ASC]
-}
-
-input ContentfulContentTypeSysFilterInput {
-    type: StringQueryOperatorInput
 }
 
 input ContentfulEntryFilterInput {
@@ -3594,52 +2348,6 @@ input ContentfulEntryFilterInput {
 input ContentfulEntrySortInput {
     fields: [ContentfulEntryFieldsEnum]
     order: [SortOrderEnum] = [ASC]
-}
-
-input ContentfulOfertaFilterInput {
-    adres: StringQueryOperatorInput
-    childContentfulOfertaOpisTextNode: contentfulOfertaOpisTextNodeFilterInput
-    children: NodeFilterListInput
-    childrenContentfulOfertaOpisTextNode: contentfulOfertaOpisTextNodeFilterListInput
-    contentful_id: StringQueryOperatorInput
-    createdAt: DateQueryOperatorInput
-    dostepnosc: StringQueryOperatorInput
-    galeria: ContentfulAssetFilterListInput
-    id: StringQueryOperatorInput
-    internal: InternalFilterInput
-    kontakt: StringQueryOperatorInput
-    node_locale: StringQueryOperatorInput
-    opis: contentfulOfertaOpisTextNodeFilterInput
-    parent: NodeFilterInput
-    pomieszczenia: StringQueryOperatorInput
-    powierzchnia: StringQueryOperatorInput
-    rodzajOferty: StringQueryOperatorInput
-    spaceId: StringQueryOperatorInput
-    sys: ContentfulOfertaSysFilterInput
-    typBudynku: StringQueryOperatorInput
-    tytul: StringQueryOperatorInput
-    updatedAt: DateQueryOperatorInput
-}
-
-input ContentfulOfertaSortInput {
-    fields: [ContentfulOfertaFieldsEnum]
-    order: [SortOrderEnum] = [ASC]
-}
-
-input ContentfulOfertaSysContentTypeFilterInput {
-    sys: ContentfulOfertaSysContentTypeSysFilterInput
-}
-
-input ContentfulOfertaSysContentTypeSysFilterInput {
-    id: StringQueryOperatorInput
-    linkType: StringQueryOperatorInput
-    type: StringQueryOperatorInput
-}
-
-input ContentfulOfertaSysFilterInput {
-    contentType: ContentfulOfertaSysContentTypeFilterInput
-    revision: IntQueryOperatorInput
-    type: StringQueryOperatorInput
 }
 
 input DateQueryOperatorInput {
@@ -3861,52 +2569,6 @@ input JSONQueryOperatorInput {
     regex: JSON
 }
 
-input MarkdownHeadingFilterInput {
-    depth: IntQueryOperatorInput
-    id: StringQueryOperatorInput
-    value: StringQueryOperatorInput
-}
-
-input MarkdownHeadingFilterListInput {
-    elemMatch: MarkdownHeadingFilterInput
-}
-
-input MarkdownRemarkFilterInput {
-    children: NodeFilterListInput
-    excerpt: StringQueryOperatorInput
-    excerptAst: JSONQueryOperatorInput
-    frontmatter: MarkdownRemarkFrontmatterFilterInput
-    headings: MarkdownHeadingFilterListInput
-    html: StringQueryOperatorInput
-    htmlAst: JSONQueryOperatorInput
-    id: StringQueryOperatorInput
-    internal: InternalFilterInput
-    parent: NodeFilterInput
-    rawMarkdownBody: StringQueryOperatorInput
-    tableOfContents: StringQueryOperatorInput
-    timeToRead: IntQueryOperatorInput
-    wordCount: MarkdownWordCountFilterInput
-}
-
-input MarkdownRemarkFilterListInput {
-    elemMatch: MarkdownRemarkFilterInput
-}
-
-input MarkdownRemarkFrontmatterFilterInput {
-    title: StringQueryOperatorInput
-}
-
-input MarkdownRemarkSortInput {
-    fields: [MarkdownRemarkFieldsEnum]
-    order: [SortOrderEnum] = [ASC]
-}
-
-input MarkdownWordCountFilterInput {
-    paragraphs: IntQueryOperatorInput
-    sentences: IntQueryOperatorInput
-    words: IntQueryOperatorInput
-}
-
 input NodeFilterInput {
     children: NodeFilterListInput
     id: StringQueryOperatorInput
@@ -4053,28 +2715,4 @@ input TransformOptions {
 
 input WebPOptions {
     quality: Int
-}
-
-input contentfulOfertaOpisTextNodeFilterInput {
-    childMarkdownRemark: MarkdownRemarkFilterInput
-    children: NodeFilterListInput
-    childrenMarkdownRemark: MarkdownRemarkFilterListInput
-    id: StringQueryOperatorInput
-    internal: InternalFilterInput
-    opis: StringQueryOperatorInput
-    parent: NodeFilterInput
-    sys: contentfulOfertaOpisTextNodeSysFilterInput
-}
-
-input contentfulOfertaOpisTextNodeFilterListInput {
-    elemMatch: contentfulOfertaOpisTextNodeFilterInput
-}
-
-input contentfulOfertaOpisTextNodeSortInput {
-    fields: [contentfulOfertaOpisTextNodeFieldsEnum]
-    order: [SortOrderEnum] = [ASC]
-}
-
-input contentfulOfertaOpisTextNodeSysFilterInput {
-    type: StringQueryOperatorInput
 }

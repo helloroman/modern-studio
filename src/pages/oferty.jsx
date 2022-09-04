@@ -5,7 +5,7 @@ import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles'
 import { FiltersList, Gallery, IntroSection } from 'assets/styles/pages/oferty.styles';
 import { Thumbnail } from 'components/Thumbnail/Thumbnail';
 
-const Oferty = ({ data: { oferty: { nodes: oferty } } }) => (
+const Oferty = ({ data }) => (
   <ContentWrapper isSubpage>
     <IntroSection>
       <HighlightedHeading>Nasza oferta</HighlightedHeading>
@@ -20,32 +20,20 @@ const Oferty = ({ data: { oferty: { nodes: oferty } } }) => (
       <li>Działka</li>
     </FiltersList>
     <Gallery>
-      {oferty.map((oferta) => (
-        <Thumbnail
-          key={oferta.id}
-          imageSource={oferta.galeria[0].file.url}
-          address={oferta.adres}
-          title={oferta.tytul}
-        />
-      ))}
+      <Thumbnail imageSource={data.thumbnail.publicURL} />
+      <Thumbnail imageSource={data.thumbnail.publicURL} />
+      <Thumbnail imageSource={data.thumbnail.publicURL} />
+      <Thumbnail imageSource={data.thumbnail.publicURL} />
+      <Thumbnail imageSource={data.thumbnail.publicURL} />
     </Gallery>
   </ContentWrapper>
 );
 
 export const query = graphql`
     query {
-        oferty: allContentfulOferta {
-            nodes {
-                id
-                adres
-                tytul
-                galeria {
-                    file {
-                        url
-                    }
-                }
-            }
-        }
+        thumbnail: file(relativePath: {regex: "/oferty\/temporary-thumbnail.jpg/"}) {
+            publicURL
+        },
     }`;
 
 export default Oferty;
