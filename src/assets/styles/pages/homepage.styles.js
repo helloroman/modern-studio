@@ -14,6 +14,8 @@ export const StyledButton = styled.button`
   text-transform: uppercase;
   display: block;
   margin: 8px 15px;
+  color: black;
+  text-decoration: none;
 `;
 
 export const StyledLinkButton = styled(Link)`
@@ -41,34 +43,68 @@ export const StyledLinkButton = styled(Link)`
 `;
 
 export const Hero = styled.div`
-  width: 100%;
-  height: 100vh;
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  background-image: url("${({ imageSource }) => imageSource}");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 30%;
-  padding: 35px;
-`;
+  justify-content: space-between;
+  height: 100vh;
+  margin-bottom: 100px;
 
-export const HeroHeading = styled.h1`
-  font-size: ${({ theme }) => theme.font.size.headingMobile};
-  margin: 0;
-  text-shadow: ${({ theme }) => theme.font.shadow};
-  
+  ${({ theme }) => theme.mq.tablet} {
+    height: 40vh;
+  }
+
   ${({ theme }) => theme.mq.desktop} {
-    font-size: ${({ theme }) => theme.font.size.heading};
-    max-width: 500px;
-    text-align: center;
+    height: ${({ theme }) => theme.size.desktopHeroHeight};
+    justify-content: flex-end;
   }
 `;
 
-export const HeroParagraph = styled.p`
-  font-size: ${({ theme }) => theme.font.size.paragraph};
-  text-shadow: ${({ theme }) => theme.font.shadow};
+export const HeroImage = styled.div`
+  background-image: url("${({ imageSource }) => imageSource}");
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 90%;
+  height: 60%;
+  position: absolute;
+  z-index: -1;
+  top: 15%;
+  right: 0;
+  opacity: 0.7;
+  
+  ${({ theme }) => theme.mq.tablet} {
+    width: 70%;
+  }
+  
+  ${({ theme }) => theme.mq.desktop} {
+    top: 0;
+    width: 80%;
+    height: 75%;
+    opacity: 1;
+  }
+`;
+
+export const HeroHeading = styled(CornerEffect)`
+  h1 {
+    font-size: ${({ theme }) => theme.font.size.headingMobile};
+    margin: 0;
+  }
+  
+  p {
+    display: none;
+  }
+  
+  ${({ theme }) => theme.mq.desktop} {
+    background-color: hsla(0, 100%, 100%, 0.6);
+    padding: 20px 30px 20px 50px;
+    font-size: ${({ theme }) => theme.font.size.heading};
+    max-width: 550px;
+    margin-bottom: 45vh;
+    
+    p {
+      display: initial;
+    }
+  }
 `;
 
 const StyledSection = styled.section`
@@ -336,42 +372,5 @@ export const StyledReview = styled.div`
   p:last-child {
     margin-top: 30px;
     font-weight: 700;
-  }
-`;
-
-export const ContactForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 100px;
-  
-  button {
-    margin: 10px 0;
-  }
-  
-  label {
-    font-family: ${({ theme }) => theme.font.family.montserrat};
-    font-weight: 500;
-    margin: 15px 0 0;
-  }
-  
-  input, textarea {
-    font-family: ${({ theme }) => theme.font.family.montserrat};
-    margin: 5px 0;
-    resize: none;
-    padding: 5px;
-  }
-  
-  textarea {
-    min-height: 200px;
-  }
-  
-  ${({ theme }) => theme.mq.desktop} {
-    max-width: 400px;
-    margin: 0 auto 100px;
-    
-    h2 {
-      max-width: 300px;
-      margin: 30px auto;
-    }
   }
 `;

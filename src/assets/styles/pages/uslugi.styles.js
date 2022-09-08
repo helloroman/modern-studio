@@ -24,7 +24,9 @@ export const Hero = styled.div`
     justify-content: flex-end;
     
     h1 {
-      max-width: 500px;
+      background-color: hsla(0, 100%, 100%, 0.6);
+      padding: 30px 20px;
+      max-width: 550px;
       margin-bottom: 380px;
     }
   }

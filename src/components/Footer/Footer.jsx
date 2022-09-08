@@ -16,10 +16,10 @@ export const Footer = () => (
       <Link to="/kontakt">Kontakt</Link>
     </div>
     <div>
-      <StyledIcon isDark>
+      <StyledIcon as="a" href="https://www.facebook.com/modernstudiopl" target="_blank" isDark>
         <FacebookIcon />
       </StyledIcon>
-      <StyledIcon isDark>
+      <StyledIcon as="a" href="https://www.instagram.com/modernstudiopl/" target="_blank" isDark>
         <InstagramIcon />
       </StyledIcon>
     </div>

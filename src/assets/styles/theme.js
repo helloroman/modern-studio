@@ -1,17 +1,3 @@
-import { css, keyframes } from 'styled-components';
-
-const showTopLeftCorner = keyframes`
-  0% {
-    clip-path: polygon(16% 100%, 16% 100%, 16% 100%, 0 100%, 0 100%, 16% 100%);
-  }
-  50% {
-    clip-path: polygon(16% 16%, 16% 16%, 16% 100%, 0 100%, 0 0, 16% 0);
-  }
-  100% {
-    clip-path: polygon(100% 16%, 16% 16%, 16% 100%, 0 100%, 0 0, 100% 0);
-  }
-`;
-
 export const theme = {
   color: {
     beige: 'hsl(33,23%,83%)',
