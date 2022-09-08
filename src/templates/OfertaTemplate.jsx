@@ -22,7 +22,7 @@ const galleryOptions = {
   infiniteLoop: true,
 };
 
-const OfertaTemplate = ({ data: { oferta, avatar } }) => (
+const OfertaTemplate = ({ data: { oferta } }) => (
   <StyledContentWrapper isSubpage>
     <OfferTitle>
       <Address>{oferta.adres}</Address>

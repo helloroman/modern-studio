@@ -72,9 +72,14 @@ export const StyledLogo = styled(({ isMobile, isSmall, ...props }) => <Logo {...
 `;
 
 export const StyledSocialIcon = styled(StyledIcon)`
+  display: inline-block;
   margin: 0 20px;
   width: 50px;
   height: 50px;
+  
+  svg {
+    width: 100%;
+  }
   
   ${({ theme }) => theme.mq.desktop} {
     width: 25px;

@@ -41,10 +41,10 @@ export const Navigation = () => {
           </ul>
         </StyledNavigation>
         <div>
-          <StyledSocialIcon isDark>
+          <StyledSocialIcon as="a" href="https://www.facebook.com/modernstudiopl" target="_blank" isDark>
             <FacebookIcon />
           </StyledSocialIcon>
-          <StyledSocialIcon isDark>
+          <StyledSocialIcon as="a" href="https://www.instagram.com/modernstudiopl/" target="_blank" isDark>
             <InstagramIcon />
           </StyledSocialIcon>
         </div>

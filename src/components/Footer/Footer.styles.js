@@ -31,7 +31,7 @@ export const StyledFooter = styled.footer`
     grid-row: 1 / 2;
     margin-left: auto;
     
-    span {
+    a {
       margin-right: 20px;
       width: 35px;
       height: 35px;

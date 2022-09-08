@@ -10,7 +10,7 @@ const Realizacje = ({ data }) => (
     <CornerEffect position="bottomRight" size="100px" distance="30px">
       <IntroSection>
         <div>
-          <HighlightedHeading>Poznaj nasze realizacje</HighlightedHeading>
+          <HighlightedHeading width="65">Poznaj nasze realizacje</HighlightedHeading>
           <p>
             Każda współpraca to dla nas wspaniała przygoda, a to co po niej pozostaje, to pełna
             satysfakcja naszych klientów. Sprawdź, co udało nam się do tej pory osiągnąć.
@@ -22,7 +22,7 @@ const Realizacje = ({ data }) => (
     <CornerEffect position="topLeft" size="100px" distance="30px" color="beige">
       <PortfolioItem isOdd>
         <div>
-          <HighlightedHeading>ul. Sielska</HighlightedHeading>
+          <HighlightedHeading width="70">ul. Sielska</HighlightedHeading>
           <p>
             Usługa obejmowała zarówno pośrednictwo w wynajmie nieruchomości, jak również pełną
             aranżację wnętrza i przestrzeni mieszkania. Nieruchomość została zarezerwowana na 1
@@ -35,7 +35,7 @@ const Realizacje = ({ data }) => (
     <CornerEffect position="bottomRight" size="100px" distance="30px" color="dark">
       <PortfolioItem>
         <div>
-          <HighlightedHeading>ul. Fieldorfa</HighlightedHeading>
+          <HighlightedHeading width="80">ul. Fieldorfa</HighlightedHeading>
           <p>
             Mieszkanie sprzedawane przez zaprzyjaźnionych właścicieli, z którymi połączyłyśmy
             transakcję sprzedaży nieruchomości z zakupem ich nowego mieszkania.
@@ -47,7 +47,7 @@ const Realizacje = ({ data }) => (
     <CornerEffect position="topLeft" size="100px" distance="30px" color="beige">
       <PortfolioItem isOdd>
         <div>
-          <HighlightedHeading>ul. Rolna</HighlightedHeading>
+          <HighlightedHeading width="80">ul. Rolna</HighlightedHeading>
           <p>
             Nietuzinkowe mieszkanie, które zarówno na nas jak i na klientach zrobiło ogromne
             wrażenie,

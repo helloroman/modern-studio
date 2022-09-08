@@ -17,9 +17,9 @@ const Kontakt = ({ data }) => (
         Szukasz nieruchomości dla siebie? A może potrzebujesz fachowej pomocy przy sprzedaży
         własnej nieruchomości? Chętnie odpowiemy na Twoje pytania. Napisz lub zadzwoń.
       </p>
-      <a href="tel:730026439">
+      <a href="tel:504848558">
         <PhoneIcon />
-        730 026 439
+        504 848 558
       </a>
     </ContactInfoWrapper>
     <ContactForm />

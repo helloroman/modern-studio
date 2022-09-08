@@ -20,7 +20,6 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
   result.data.allContentfulOferta.nodes.forEach((node) => {
     const slug = `/oferty/${slugify(node.adres.toLowerCase())}`;
-    console.log(slug);
     createPage({
       path: slug,
       component: ofertaTemplate,
