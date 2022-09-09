@@ -3,8 +3,9 @@ import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles'
 import { graphql } from 'gatsby';
 import MailIcon from 'assets/icons-components/mail.svg';
 import PhoneIcon from 'assets/icons-components/phone.svg';
-import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
-import { Hero, InfoItem, InfoItemContent } from '../assets/styles/pages/zespol.styles';
+import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
+import { Hero, InfoItem, InfoItemContent } from 'assets/styles/pages/zespol.styles';
+import { contactData } from 'components/ContactDetails/ContactDetails';
 
 const Zespol = ({ data }) => (
   <ContentWrapper isSubpage>
@@ -23,13 +24,13 @@ const Zespol = ({ data }) => (
           przyjaznych relacjach, szacunku i zaufaniu. Pasjonatka wyjątkowych wnętrz, niebanalnej
           architektury i sztuki w każdej postaci.
         </p>
-        <a href="mailto:ania@msnieruchomosci.pl">
+        <a href={`mailto:${contactData.anna.email}`}>
           <MailIcon />
-          ania@msnieruchomosci.pl
+          {contactData.anna.email}
         </a>
-        <a href="tel:730026439">
+        <a href={`tel:${contactData.anna.phone}`}>
           <PhoneIcon />
-          730 026 439
+          {contactData.anna.phone}
         </a>
       </InfoItemContent>
       <img src={data.ania1.publicURL} alt="" />
@@ -45,13 +46,13 @@ const Zespol = ({ data }) => (
           każde zlecenie to nowa, fascynująca przygoda, której centrum stanowi człowiek i jego
           marzenie.
         </p>
-        <a href="mailto:amanda@msnieruchomosci.pl">
+        <a href={`mailto:${contactData.amanda.email}`}>
           <MailIcon />
-          amanda@msnieruchomosci.pl
+          {contactData.amanda.email}
         </a>
-        <a href="tel:730026439">
+        <a href={`tel:${contactData.amanda.phone}`}>
           <PhoneIcon />
-          730 026 439
+          {contactData.amanda.phone}
         </a>
       </InfoItemContent>
       <img src={data.amanda2.publicURL} alt="" />
@@ -67,13 +68,13 @@ const Zespol = ({ data }) => (
           zaangażowanie stanowią równanie, którego wynikiem zawsze jest błysk satysfakcji w oczach
           klienta.
         </p>
-        <a href="mailto:kamila@msnieruchomosci.pl">
+        <a href={`mailto:${contactData.kamila.email}`}>
           <MailIcon />
-          kamila@msnieruchomosci.pl
+          {contactData.kamila.email}
         </a>
-        <a href="tel:730026439">
+        <a href={`tel:${contactData.kamila.phone}`}>
           <PhoneIcon />
-          730 026 439
+          {contactData.kamila.phone}
         </a>
       </InfoItemContent>
       <img src={data.kamila3.publicURL} alt="" />
@@ -89,13 +90,13 @@ const Zespol = ({ data }) => (
           zaangażowanie stanowią równanie, którego wynikiem zawsze jest błysk satysfakcji w oczach
           klienta.
         </p>
-        <a href="mailto:marta@msnieruchomosci.pl">
+        <a href={`mailto:${contactData.marta.email}`}>
           <MailIcon />
-          marta@msnieruchomosci.pl
+          {contactData.marta.email}
         </a>
-        <a href="tel:730026439">
+        <a href={`tel:${contactData.marta.phone}`}>
           <PhoneIcon />
-          730 026 439
+          {contactData.marta.phone}
         </a>
       </InfoItemContent>
       <img src={data.marta4.publicURL} alt="" />
@@ -111,13 +112,13 @@ const Zespol = ({ data }) => (
           zaangażowanie stanowią równanie, którego wynikiem zawsze jest błysk satysfakcji w oczach
           klienta.
         </p>
-        <a href="mailto:patrycja@msnieruchomosci.pl">
+        <a href={`mailto:${contactData.patrycja.email}`}>
           <MailIcon />
-          patrycja@msnieruchomosci.pl
+          {contactData.patrycja.email}
         </a>
-        <a href="tel:730026439">
+        <a href={`tel:${contactData.patrycja.phone}`}>
           <PhoneIcon />
-          730 026 439
+          {contactData.patrycja.phone}
         </a>
       </InfoItemContent>
       <img src={data.patrycja5.publicURL} alt="" />

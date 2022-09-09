@@ -3,31 +3,31 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { ContactDetailsWrapper } from './ContactDetails.styles';
 
-const contactData = {
+export const contactData = {
   anna: {
     name: 'Anna Żarczyńska',
     email: 'anna@msnieruchomosci.pl',
-    phone: '324235234',
+    phone: '504848558',
   },
   amanda: {
     name: 'Amanda Grabowska',
     email: 'amanda@msnieruchomosci.pl',
-    phone: '546342423',
+    phone: '785252365',
   },
   patrycja: {
     name: 'Patrycja Biernaczyk',
     email: 'patrycja@msnieruchomosci.pl',
-    phone: '4256452532',
+    phone: '609243737',
   },
   kamila: {
     name: 'Kamila Urbaniak',
     email: 'kamila@msnieruchomosci.pl',
-    phone: '846786457',
+    phone: '535380469',
   },
   marta: {
-    name: 'Marta Kucharczyk',
+    name: 'Marta Żarczyńska',
     email: 'marta@msnieruchomosci.pl',
-    phone: '124143223',
+    phone: '694338623',
   },
 };
 
