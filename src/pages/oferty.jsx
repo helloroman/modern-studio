@@ -22,7 +22,8 @@ const Oferty = ({ data: { oferty: { nodes: oferty } } }) => (
     {/*  <li>Dom</li> */}
     {/*  <li>Działka</li> */}
     {/* </FiltersList> */}
-    {oferty.length ? (
+    {/* {oferty.length ? ( */}
+    {[].length ? (
       <Gallery>
         {oferty.map((oferta) => (
           <Thumbnail
