@@ -81,8 +81,8 @@ const OfertaTemplate = ({ data: { oferta } }) => (
 );
 
 export const query = graphql`
-    query {
-        oferta: contentfulOferta(id: {eq: "1041d509-8ae6-5f12-a4cc-c99289f775db"}) {
+    query($id: String) {
+        oferta: contentfulOferta(id: {eq: $id}) {
             tytul
             typBudynku
             rodzajOferty
