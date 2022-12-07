@@ -84,11 +84,11 @@ const Zespol = ({ data }) => (
         <HighlightedHeading>Marta Kucharczyk</HighlightedHeading>
         <p>Agent ds. nieruchomości</p>
         <p>
-          Od zawsze związana z Poznaniem. Absolwentka UAM na kierunku Fizyka medyczna. Jej domeną
-          jest doskonała organizacja i niezawodna pamięć. W branży nieruchomości uwielbia dynamikę i
-          nowe wyzwania. Budowanie relacji opartej na zrozumieniu i wzajemnym zaufaniu oraz pełne
-          zaangażowanie stanowią równanie, którego wynikiem zawsze jest błysk satysfakcji w oczach
-          klienta.
+          Absolwentka Politechniki Poznańskiej oraz Wyższej Szkoły Bankowej, na których studiowała
+          Zarządzanie Zasobami Ludzkimi, Komunikację Interpersonalną oraz PR.
+          Prywatnie jest mamą dwójki dzieci, dlatego planowanie i zarządzanie czasem ma w
+          małym palcu, a umiejętność słuchania i rozwiązywania nawet najtrudniejszych problemów,
+          to jej chleb powszedni.
         </p>
         <a href={`mailto:${contactData.marta.email}`}>
           <MailIcon />
@@ -106,11 +106,11 @@ const Zespol = ({ data }) => (
         <HighlightedHeading>Patrycja Biernaczyk</HighlightedHeading>
         <p>Agent ds. nieruchomości</p>
         <p>
-          Od zawsze związana z Poznaniem. Absolwentka UAM na kierunku Fizyka medyczna. Jej domeną
-          jest doskonała organizacja i niezawodna pamięć. W branży nieruchomości uwielbia dynamikę i
-          nowe wyzwania. Budowanie relacji opartej na zrozumieniu i wzajemnym zaufaniu oraz pełne
-          zaangażowanie stanowią równanie, którego wynikiem zawsze jest błysk satysfakcji w oczach
-          klienta.
+          Absolwentka Uniwersytetu im. Adama Mickiewicza na kierunku etnolingwistyka. Pierwsze
+          doświadczenie zawodowe zdobywała w firmach, w których języki, komunikatywność i
+          nawiązywanie relacji z klientem odgrywało kluczową rolę. Pasjonatka sportu i
+          motoryzacji, podróży, nietuzinkowych wnętrz. Rzetelna, odpowiedzialna i otwarta na
+          drugiego człowieka. Zafascynowana nieruchomościami z bogatą historią.
         </p>
         <a href={`mailto:${contactData.patrycja.email}`}>
           <MailIcon />
