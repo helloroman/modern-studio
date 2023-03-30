@@ -5,6 +5,7 @@ import HeartIcon from 'assets/icons-components/heart.svg';
 import KeyIcon from 'assets/icons-components/key.svg';
 import PeopleIcon from 'assets/icons-components/people.svg';
 import SuitcaseIcon from 'assets/icons-components/suitcase.svg';
+import PenIcon from 'assets/icons-components/pen.svg';
 import { graphql } from 'gatsby';
 import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles';
 import {
@@ -68,7 +69,7 @@ const Uslugi = ({ data }) => (
         </p>
       </li>
       <li>
-        <KeyIcon />
+        <PenIcon />
         <h3>Współpraca z architektem</h3>
         <p>
           Współpraca z zaprzyjaźnionym biurem architektonicznym w zakresie projektowania wnętrz
@@ -76,6 +77,14 @@ const Uslugi = ({ data }) => (
           i kompleksowej usługi
           wykończenie pod klucz.
 
+        </p>
+      </li>
+      <li>
+        <KeyIcon />
+        <h3>Aranżacja przestrzeni pod klucz</h3>
+        <p>
+          wybór mebli, sprzętów, dodatków, wyposażenia, koordynacja zakupów, transportu, montażu –
+          kompleksowe przygotowanie nieruchomości do transakcji najmu/sprzedaży.
         </p>
       </li>
     </ServicesStyledList>

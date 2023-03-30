@@ -16,7 +16,7 @@ const Zespol = ({ data }) => (
     <InfoItem>
       <InfoItemContent>
         <HighlightedHeading>Anna Żarczyńska</HighlightedHeading>
-        <p>Pośrednik nieruchomości nr licencji 666</p>
+        <p>Pośrednik nieruchomości nr licencji 26692</p>
         <p>
           Założycielka Modern Studio. Z wykształcenia prawnik, absolwentka UAM w Poznaniu.
           Doświadczenie zawodowe zdobywała w poznańskich kancelariach prawnych. Swoją pracę opiera
@@ -38,13 +38,13 @@ const Zespol = ({ data }) => (
     <InfoItem>
       <InfoItemContent>
         <HighlightedHeading>Amanda Grabowska</HighlightedHeading>
-        <p>Agent ds. nieruchomości</p>
+        <p>Agent ds. nieruchomości nr licencji 27995</p>
         <p>
           Z wykształcenia Product & Brand Managerka. Branża nieruchomości od razu okazała się
           zawodowym strzałem w dziesiątkę - połączeniem pasji do pracy z ludźmi i pokarmu dla
           kreatywnej duszy. Zachwyca ją proces, który krok po kroku przechodzi wraz z klientem, a
           każde zlecenie to nowa, fascynująca przygoda, której centrum stanowi człowiek i jego
-          marzenie.
+          marzenie. Miłośniczka psów, fotografii analogowej i płyt winylowych.
         </p>
         <a href={`mailto:${contactData.amanda.email}`}>
           <MailIcon />
@@ -60,7 +60,7 @@ const Zespol = ({ data }) => (
     <InfoItem>
       <InfoItemContent>
         <HighlightedHeading>Kamila Urbaniak</HighlightedHeading>
-        <p>Agent ds. nieruchomości</p>
+        <p>Agent ds. nieruchomości nr licencji 27925</p>
         <p>
           Od zawsze związana z Poznaniem. Absolwentka UAM na kierunku Fizyka medyczna. Jej domeną
           jest doskonała organizacja i niezawodna pamięć. W branży nieruchomości uwielbia dynamikę i
@@ -81,7 +81,7 @@ const Zespol = ({ data }) => (
     </InfoItem>
     <InfoItem>
       <InfoItemContent>
-        <HighlightedHeading>Marta Kucharczyk</HighlightedHeading>
+        <HighlightedHeading>Marta Żarczyńska</HighlightedHeading>
         <p>Agent ds. nieruchomości</p>
         <p>
           Absolwentka Politechniki Poznańskiej oraz Wyższej Szkoły Bankowej, na których studiowała
@@ -104,7 +104,7 @@ const Zespol = ({ data }) => (
     <InfoItem>
       <InfoItemContent>
         <HighlightedHeading>Patrycja Biernaczyk</HighlightedHeading>
-        <p>Agent ds. nieruchomości</p>
+        <p>Agent ds. nieruchomości nr licencji 25941</p>
         <p>
           Absolwentka Uniwersytetu im. Adama Mickiewicza na kierunku etnolingwistyka. Pierwsze
           doświadczenie zawodowe zdobywała w firmach, w których języki, komunikatywność i

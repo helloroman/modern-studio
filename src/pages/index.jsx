@@ -33,7 +33,7 @@ const Homepage = ({ data }) => (
       <WelcomeSectionContent position="topRight" size="100px" distance="30px" offset="600">
         <h2>
           Obsługę nieruchomości
-          wymyśliliśmy na nowo
+          wymyśliłyśmy na nowo
         </h2>
         <p>
           Modern Studio to nowoczesne biuro nieruchomości z profesjonalnym
@@ -73,7 +73,7 @@ const Homepage = ({ data }) => (
           </h3>
           <p>
             Doskonale rozumiemy Twoje potrzeby. Jesteśmy zespołem o zróżnicowanych kompetencjach,
-            dzięki którym świetnie się uzupełniamy
+            dzięki którym świetnie się uzupełniamy.
           </p>
         </li>
       </StyledList>

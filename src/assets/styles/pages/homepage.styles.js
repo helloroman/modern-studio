@@ -85,6 +85,8 @@ export const HeroImage = styled.div`
 `;
 
 export const HeroHeading = styled(CornerEffect)`
+  margin: 20px;
+  
   h1 {
     font-size: ${({ theme }) => theme.font.size.headingMobile};
     margin: 0;
@@ -99,7 +101,7 @@ export const HeroHeading = styled(CornerEffect)`
     padding: 20px 30px 20px 50px;
     font-size: ${({ theme }) => theme.font.size.heading};
     max-width: 550px;
-    margin-bottom: 45vh;
+    margin: 20vh 10%;
     
     p {
       display: initial;
