@@ -38,7 +38,7 @@ const Zespol = ({ data }) => (
     <InfoItem>
       <InfoItemContent>
         <HighlightedHeading>Amanda Grabowska</HighlightedHeading>
-        <p>Agent ds. nieruchomości nr licencji 27995</p>
+        <p>Pośrednik nieruchomości nr licencji 27995</p>
         <p>
           Z wykształcenia Product & Brand Managerka. Branża nieruchomości od razu okazała się
           zawodowym strzałem w dziesiątkę - połączeniem pasji do pracy z ludźmi i pokarmu dla
@@ -60,7 +60,7 @@ const Zespol = ({ data }) => (
     <InfoItem>
       <InfoItemContent>
         <HighlightedHeading>Kamila Urbaniak</HighlightedHeading>
-        <p>Agent ds. nieruchomości nr licencji 27925</p>
+        <p>Pośrednik nieruchomości nr licencji 27925</p>
         <p>
           Od zawsze związana z Poznaniem. Absolwentka UAM na kierunku Fizyka medyczna. Jej domeną
           jest doskonała organizacja i niezawodna pamięć. W branży nieruchomości uwielbia dynamikę i
@@ -82,7 +82,7 @@ const Zespol = ({ data }) => (
     <InfoItem>
       <InfoItemContent>
         <HighlightedHeading>Marta Żarczyńska</HighlightedHeading>
-        <p>Agent ds. nieruchomości</p>
+        <p>Pośrednik nieruchomości</p>
         <p>
           Absolwentka Politechniki Poznańskiej oraz Wyższej Szkoły Bankowej, na których studiowała
           Zarządzanie Zasobami Ludzkimi, Komunikację Interpersonalną oraz PR.
@@ -104,7 +104,7 @@ const Zespol = ({ data }) => (
     <InfoItem>
       <InfoItemContent>
         <HighlightedHeading>Patrycja Biernaczyk</HighlightedHeading>
-        <p>Agent ds. nieruchomości nr licencji 25941</p>
+        <p>Pośrednik nieruchomości nr licencji 25941</p>
         <p>
           Absolwentka Uniwersytetu im. Adama Mickiewicza na kierunku etnolingwistyka. Pierwsze
           doświadczenie zawodowe zdobywała w firmach, w których języki, komunikatywność i
@@ -122,6 +122,29 @@ const Zespol = ({ data }) => (
         </a>
       </InfoItemContent>
       <img src={data.patrycja5.publicURL} alt="" />
+    </InfoItem>
+    <InfoItem>
+      <InfoItemContent>
+        <HighlightedHeading>Agnieszka Raczyńska</HighlightedHeading>
+        <p>Pośrednik nieruchomości</p>
+        <p>
+          Cechuje ją dobra organizacja i dokładność.
+          Świetnie radzi sobie w sytuacjach stresowych. Bardzo ceni sobie kontakt z ludźmi i potrafi
+          odpowiadać na ich potrzeby, dlatego w zawodzie agentki nieruchomości odnajduje się
+          doskonale. Chętnie podejmuje się nowych wyzwań i szuka dopasowanych rozwiązań.
+          Pasjonatka sztuki Beksińskiego, uwielbia słuchać Sinatry, ćwiczyć jogę oraz spędzać czas
+          na odkrywaniu nowych kulinarnych smaków.
+        </p>
+        <a href={`mailto:${contactData.agnieszka.email}`}>
+          <MailIcon />
+          {contactData.agnieszka.email}
+        </a>
+        <a href={`tel:${contactData.agnieszka.phone}`}>
+          <PhoneIcon />
+          {contactData.agnieszka.phone}
+        </a>
+      </InfoItemContent>
+      <img src={data.agnieszka6.publicURL} alt="" />
     </InfoItem>
   </ContentWrapper>
 );
@@ -144,6 +167,9 @@ export const query = graphql`
             publicURL
         },
         patrycja5: file(relativePath: {regex: "/zespol\/5_patrycja.jpg/"}) {
+            publicURL
+        },
+        agnieszka6: file(relativePath: {regex: "/zespol\/6_agnieszka.jpg/"}) {
             publicURL
         },
 

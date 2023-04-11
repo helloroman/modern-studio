@@ -64,7 +64,7 @@ const Realizacje = ({ data }) => (
           <p>
             Transakcja wynajmu mieszkania, przy której na naszych oczach zrodziła się piękna
             przyjaźń
-            między Wynajmującą - Panią Katarzyną, a Najemczynią - Panią Gosią
+            między Wynajmującą - Panią Katarzyną, a Najemczynią - Panią Gosią.
           </p>
         </div>
         <img src={data.staszica4.publicURL} alt="" />

@@ -25,7 +25,7 @@ const Homepage = ({ data }) => (
     <Hero>
       <HeroHeading position="bottomLeft" color="dark" size="100px" distance="30px">
         <h1>Biuro nieruchomości, którego potrzebujesz</h1>
-        <p>Sprawdź, co oznacza dla nas bezkonkurencyjność</p>
+        <p>Sprawdź, co oznacza dla nas bezkonkurencyjność.</p>
       </HeroHeading>
       <HeroImage imageSource={data.hero.publicURL} />
     </Hero>
@@ -107,7 +107,7 @@ const Homepage = ({ data }) => (
           <h3>Pośrednictwo</h3>
           <p>
             Profesjonalne i kompleksowe usługi pośrednictwa w sprzedaży, zakupie, wynajmie lub
-            najmie nieruchomości
+            najmie nieruchomości.
           </p>
         </li>
         <li>
@@ -151,7 +151,7 @@ const Homepage = ({ data }) => (
           Co mówią o nas nasi klienci?
         </HighlightedHeading>
         <p>
-          Bezkompromisowo wspieramy naszych klientów a ich satysfakcja
+          Bezkompromisowo wspieramy naszych klientów, a ich satysfakcja
           jest dla nas najważniejszym celem.
         </p>
       </div>

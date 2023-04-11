@@ -16,7 +16,7 @@ import { HighlightedHeading } from '../components/HighlightedHeading/Highlighted
 const Uslugi = ({ data }) => (
   <ContentWrapper isSubpage>
     <Hero>
-      <h1>Obsługę nieruchomości wymyśliliśmy na nowo</h1>
+      <h1>Obsługę nieruchomości wymyśliłyśmy na nowo</h1>
       <HeroImage imageSource={data.hero.publicURL} />
       <HeroInfo>
         <p>
@@ -57,7 +57,7 @@ const Uslugi = ({ data }) => (
         <h3>Współpraca z deweloperem</h3>
         <p>
           Pośrednictwo w zakresie sprzedaży inwestycji deweloperskiej (pełen zakres, znajomość
-          lokalnych inwestycji/pewność wysokiej jakości wykonania)
+          lokalnych inwestycji/pewność wysokiej jakości wykonania).
         </p>
       </li>
       <li>

@@ -29,6 +29,11 @@ export const contactData = {
     email: 'marta@msnieruchomosci.pl',
     phone: '694338623',
   },
+  agnieszka: {
+    name: 'Agnieszka Raczyńska',
+    email: 'agnieszka@msnieruchomosci.pl',
+    phone: '534970152',
+  },
 };
 
 export const ContactDetails = ({ contact = 'anna' }) => {
