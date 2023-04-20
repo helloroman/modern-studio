@@ -106,6 +106,7 @@ const Zespol = ({ data }) => (
         <HighlightedHeading>Patrycja Biernaczyk</HighlightedHeading>
         <p>Pośrednik nieruchomości nr licencji 25941</p>
         <p>
+          Absolwentka kierunku Kosmetologia na WSZUiE.
           Absolwentka Uniwersytetu im. Adama Mickiewicza na kierunku etnolingwistyka. Pierwsze
           doświadczenie zawodowe zdobywała w firmach, w których języki, komunikatywność i
           nawiązywanie relacji z klientem odgrywało kluczową rolę. Pasjonatka sportu i
