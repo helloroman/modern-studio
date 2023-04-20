@@ -52,7 +52,7 @@ export const Gallery = styled.div`
   width: 100%;
 `;
 
-export const OfferDescription = styled.p`
+export const OfferDescription = styled.div`
   position: relative;
 
   ${({ theme }) => theme.mq.desktop} {
