@@ -1,10 +1,10 @@
 export const theme = {
   color: {
-    beige: 'hsl(33,23%,83%)',
+    beige: 'hsl(33,25%,83%)',
     darkBeige: 'hsl(33,23%,33%)',
     steel: 'hsl(225,23%,83%)',
     orange: 'hsl(14,64%,54%)',
-    dark: 'hsl(210,11%,30%)',
+    dark: 'hsl(210,35%,35%)',
     black: 'hsl(0,0%,0%)',
     brown: 'hsl(355,13%,20%)',
   },

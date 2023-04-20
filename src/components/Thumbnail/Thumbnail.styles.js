@@ -10,6 +10,15 @@ export const ThumbnailWrapper = styled(Link)`
   display: flex;
   align-items: flex-end;
   text-decoration: none;
+  
+  img {
+    filter: brightness(0.65);
+    transition: filter 0.05s ease-in-out;
+  }
+  
+  &:hover img {
+    filter: brightness(0.8);
+  }
 `;
 
 export const ThumbnailImage = styled.img`
@@ -21,7 +30,6 @@ export const ThumbnailImage = styled.img`
   top: 0;
   left: 0;
   z-index: -1;
-  filter: brightness(0.7);
 `;
 
 export const ThumbnailInfo = styled.div`

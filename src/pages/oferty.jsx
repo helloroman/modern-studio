@@ -8,7 +8,7 @@ import {
 } from 'assets/styles/pages/oferty.styles';
 import { Thumbnail } from 'components/Thumbnail/Thumbnail';
 
-const Oferty = ({ data: { oferty: { nodes: oferty } } }) => (
+const Oferty = ({ data: { oferty: { nodes: oferty = [] } } }) => (
   <ContentWrapper isSubpage>
     <IntroSection>
       <HighlightedHeading>Nasza oferta</HighlightedHeading>
@@ -23,7 +23,7 @@ const Oferty = ({ data: { oferty: { nodes: oferty } } }) => (
     {/*  <li>Działka</li> */}
     {/* </FiltersList> */}
     {/* {oferty.length ? ( */}
-    {[].length ? (
+    {oferty.length ? (
       <Gallery>
         {oferty.map((oferta) => (
           <Thumbnail

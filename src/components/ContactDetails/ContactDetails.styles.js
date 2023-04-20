@@ -9,6 +9,7 @@ export const ContactDetailsWrapper = styled.div`
     height: 100px;
     margin-right: 20px;
     border-radius: 50px;
+    object-fit: cover;
   }
   
   p {

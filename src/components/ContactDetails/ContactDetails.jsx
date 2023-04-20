@@ -54,6 +54,9 @@ export const ContactDetails = ({ contact = 'anna' }) => {
           patrycja: file(relativePath: {regex: "/zespol\/5_patrycja.jpg/"}) {
               publicURL
           },
+          agnieszka: file(relativePath: {regex: "/zespol\/6_agnieszka.jpg/"}) {
+              publicURL
+          },
       }`);
 
   return (
