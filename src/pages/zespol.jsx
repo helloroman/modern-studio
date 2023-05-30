@@ -106,7 +106,6 @@ const Zespol = ({ data }) => (
         <HighlightedHeading>Patrycja Biernaczyk</HighlightedHeading>
         <p>Pośrednik nieruchomości nr licencji 25941</p>
         <p>
-          Absolwentka kierunku Kosmetologia na WSZUiE.
           Absolwentka Uniwersytetu im. Adama Mickiewicza na kierunku etnolingwistyka. Pierwsze
           doświadczenie zawodowe zdobywała w firmach, w których języki, komunikatywność i
           nawiązywanie relacji z klientem odgrywało kluczową rolę. Pasjonatka sportu i
@@ -129,6 +128,7 @@ const Zespol = ({ data }) => (
         <HighlightedHeading>Agnieszka Raczyńska</HighlightedHeading>
         <p>Pośrednik nieruchomości</p>
         <p>
+          Absolwentka kierunku Kosmetologia na WSZUiE.
           Cechuje ją dobra organizacja i dokładność.
           Świetnie radzi sobie w sytuacjach stresowych. Bardzo ceni sobie kontakt z ludźmi i potrafi
           odpowiadać na ich potrzeby, dlatego w zawodzie agentki nieruchomości odnajduje się
