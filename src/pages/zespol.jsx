@@ -128,7 +128,6 @@ const Zespol = ({ data }) => (
         <HighlightedHeading>Agnieszka Raczyńska</HighlightedHeading>
         <p>Pośrednik nieruchomości</p>
         <p>
-          Absolwentka kierunku Kosmetologia na WSZUiE.
           Cechuje ją dobra organizacja i dokładność.
           Świetnie radzi sobie w sytuacjach stresowych. Bardzo ceni sobie kontakt z ludźmi i potrafi
           odpowiadać na ich potrzeby, dlatego w zawodzie agentki nieruchomości odnajduje się
