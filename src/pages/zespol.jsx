@@ -59,28 +59,6 @@ const Zespol = ({ data }) => (
     </InfoItem>
     <InfoItem>
       <InfoItemContent>
-        <HighlightedHeading>Kamila Urbaniak</HighlightedHeading>
-        <p>Pośrednik nieruchomości nr licencji 27925</p>
-        <p>
-          Od zawsze związana z Poznaniem. Absolwentka UAM na kierunku Fizyka medyczna. Jej domeną
-          jest doskonała organizacja i niezawodna pamięć. W branży nieruchomości uwielbia dynamikę i
-          nowe wyzwania. Budowanie relacji opartej na zrozumieniu i wzajemnym zaufaniu oraz pełne
-          zaangażowanie stanowią równanie, którego wynikiem zawsze jest błysk satysfakcji w oczach
-          klienta.
-        </p>
-        <a href={`mailto:${contactData.kamila.email}`}>
-          <MailIcon />
-          {contactData.kamila.email}
-        </a>
-        <a href={`tel:${contactData.kamila.phone}`}>
-          <PhoneIcon />
-          {contactData.kamila.phone}
-        </a>
-      </InfoItemContent>
-      <img src={data.kamila3.publicURL} alt="" />
-    </InfoItem>
-    <InfoItem>
-      <InfoItemContent>
         <HighlightedHeading>Marta Żarczyńska</HighlightedHeading>
         <p>Pośrednik nieruchomości</p>
         <p>
