@@ -37,50 +37,6 @@ const Zespol = ({ data }) => (
     </InfoItem>
     <InfoItem>
       <InfoItemContent>
-        <HighlightedHeading>Amanda Grabowska</HighlightedHeading>
-        <p>Pośrednik nieruchomości nr licencji 27995</p>
-        <p>
-          Z wykształcenia Product & Brand Managerka. Branża nieruchomości od razu okazała się
-          zawodowym strzałem w dziesiątkę - połączeniem pasji do pracy z ludźmi i pokarmu dla
-          kreatywnej duszy. Zachwyca ją proces, który krok po kroku przechodzi wraz z klientem, a
-          każde zlecenie to nowa, fascynująca przygoda, której centrum stanowi człowiek i jego
-          marzenie. Miłośniczka psów, fotografii analogowej i płyt winylowych.
-        </p>
-        <a href={`mailto:${contactData.amanda.email}`}>
-          <MailIcon />
-          {contactData.amanda.email}
-        </a>
-        <a href={`tel:${contactData.amanda.phone}`}>
-          <PhoneIcon />
-          {contactData.amanda.phone}
-        </a>
-      </InfoItemContent>
-      <img src={data.amanda2.publicURL} alt="" />
-    </InfoItem>
-    <InfoItem>
-      <InfoItemContent>
-        <HighlightedHeading>Marta Żarczyńska</HighlightedHeading>
-        <p>Pośrednik nieruchomości</p>
-        <p>
-          Absolwentka Politechniki Poznańskiej oraz Wyższej Szkoły Bankowej, na których studiowała
-          Zarządzanie Zasobami Ludzkimi, Komunikację Interpersonalną oraz PR.
-          Prywatnie jest mamą dwójki dzieci, dlatego planowanie i zarządzanie czasem ma w
-          małym palcu, a umiejętność słuchania i rozwiązywania nawet najtrudniejszych problemów,
-          to jej chleb powszedni.
-        </p>
-        <a href={`mailto:${contactData.marta.email}`}>
-          <MailIcon />
-          {contactData.marta.email}
-        </a>
-        <a href={`tel:${contactData.marta.phone}`}>
-          <PhoneIcon />
-          {contactData.marta.phone}
-        </a>
-      </InfoItemContent>
-      <img src={data.marta4.publicURL} alt="" />
-    </InfoItem>
-    <InfoItem>
-      <InfoItemContent>
         <HighlightedHeading>Patrycja Biernaczyk</HighlightedHeading>
         <p>Pośrednik nieruchomości nr licencji 25941</p>
         <p>
@@ -112,22 +68,9 @@ export const query = graphql`
         ania1: file(relativePath: {regex: "/zespol\/1_ania.jpg/"}) {
             publicURL
         },
-        amanda2: file(relativePath: {regex: "/zespol\/2_amanda.jpg/"}) {
-            publicURL
-        },
-        kamila3: file(relativePath: {regex: "/zespol\/3_kamila.jpg/"}) {
-            publicURL
-        },
-        marta4: file(relativePath: {regex: "/zespol\/4_marta.jpg/"}) {
-            publicURL
-        },
         patrycja5: file(relativePath: {regex: "/zespol\/5_patrycja.jpg/"}) {
             publicURL
         },
-        agnieszka6: file(relativePath: {regex: "/zespol\/6_agnieszka.jpg/"}) {
-            publicURL
-        },
-
     }`;
 
 export default Zespol;
